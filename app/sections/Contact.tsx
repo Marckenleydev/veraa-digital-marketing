@@ -21,9 +21,19 @@ export function Contact() {
   const [form,setForm] = useState({name:"",email:"",service:"",budget:"",msg:""});
   const [sent,setSent] = useState(false);
   const [focus,setFocus] = useState(null);
-  const up = (k,val) => setForm(f=>({...f,[k]:val}));
-  const BUDGETS = ["< $2k","$4k–$12k","$15k–$50k","$50k+"];
-  const SVCS = ["Web Development","Mobile App","UI/UX Design","SEO Strategy","Full Package"];
+  const up = (k:string,val:string) => setForm(f=>({...f,[k]:val}));
+  const BUDGETS = [
+  "AED 5k–15k",
+  "AED 15k–40k",
+  "AED 40k–100k",
+  "AED 100k+"
+];
+  const SVCS = [
+  "Performance Marketing (Meta & Google Ads)",
+  "Website & Conversion Optimization",
+  "Content & Creative Production",
+  "Growth Strategy"
+];
 
   return (
     <section id="contact" style={{
@@ -111,7 +121,7 @@ export function Contact() {
             
             {/* Contact Info Items */}
             {[{l:"Email", v:"info@codeveraa.com"},
-              {l:"Based in", v:"Dubai · Brasil · Turkey · Remote"},
+              {l:"Based in", v:"Dubai · Remote"},
               {l:"Availability", v:"Open for Q3 2024 projects"}
             ].map(item => (
               <div key={item.l} style={{

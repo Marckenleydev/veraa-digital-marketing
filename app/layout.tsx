@@ -17,21 +17,23 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://codeveraa.com"),
 
   title: {
-    default: "Codeveraa Studio | Web Development & AI Solutions Agency",
+    default: "Codeveraa Studio | Marketing Digital Agency",
     template: "%s | Codeveraa Studio",
   },
 
   description:
-    "Codeveraa Studio is a premium software and web development agency specializing in modern websites, AI integrations, scalable platforms, and digital experiences for businesses worldwide.",
+    "Codeveraa Studio is a premium software and digital solutions agency founded by Marckenley Dorsainvil, specializing in modern websites, AI integrations, scalable platforms, and digital experiences for businesses worldwide.",
 
   keywords: [
-    "web development agency",
+    "Marckenley Dorsainvil",
+    "Marketing Digital",
+    "Marketing Digital agency",
     "software development company",
     "AI development services",
     "Next.js development",
     "React development",
     "custom software development",
-    "Dubai web development agency",
+    "Dubai Marketing Digital agency",
     "startup website development",
     "modern web applications",
   ],
@@ -44,11 +46,13 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  
 
   openGraph: {
-    title: "Codeveraa Studio | Web Development & AI Solutions",
+    title: "Codeveraa Studio | Marketing Digital & AI Solutions",
     description:
       "We design and build high-performance websites, AI-powered systems, and scalable digital products for startups and enterprises.",
+      
     url: "https://codeveraa.com",
     siteName: "Codeveraa Studio",
     images: [
@@ -56,7 +60,7 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Codeveraa Studio Web Development Agency",
+        alt: "Codeveraa Studio Marketing Digital Agency",
       },
     ],
     locale: "en_US",
@@ -67,7 +71,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Codeveraa Studio | Web & AI Development",
     description:
-      "Premium web development, AI solutions, and scalable software built for modern businesses.",
+      "Premium Marketing Digital, AI solutions, and scalable software built for modern businesses.",
     images: ["/og-image.jpg"],
   },
 
@@ -88,45 +92,87 @@ export const metadata: Metadata = {
 
   category: "technology",
 };
-
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Marckenley Dorsainvil",
+    "jobTitle": "Founder, Engineer & Digital Marketing Strategist",
+    "url": "https://codeveraa.com",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Codeveraa Studio",
+      "url": "https://codeveraa.com"
+    }
+  };
+
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Codeveraa Studio",
+    "url": "https://codeveraa.com",
+    "founder": {
+      "@type": "Person",
+      "name": "Marckenley Dorsainvil"
+    }
+  };
+
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personSchema),
+          }}
+        />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+
         {children}
 
-         <div className="fixed bottom-6 right-6 z-[9999] pointer-events-auto">
-        <a
-          href="https://wa.me/971552635229"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-16 h-16 rounded-full bg-white  flex items-center justify-center shadow-2xl hover:scale-110
-          transition-transform
-          sm:animate-bounce"
-        >
-          <Image src="/whatsapp.svg" alt="WhatsApp" width={42} height={42} />
-        </a>
-      </div>
+        <div className="fixed bottom-6 right-6 z-[9999] pointer-events-auto">
+          <a
+            href="https://wa.me/971552635229"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-2xl hover:scale-110 transition-transform sm:animate-bounce"
+          >
+            <Image 
+              src="/whatsapp.svg" 
+              alt="WhatsApp" 
+              width={42} 
+              height={42} 
+            />
+          </a>
+        </div>
 
+        <div className="fixed bottom-26 right-6 z-[9999] md:bottom-30">
+          <a
+            href="tel:+971552635229"
+            className="relative call-ring w-16 h-16 rounded-full bg-white border border-[#C9A84C] flex items-center justify-center shadow-2xl"
+          >
+            <svg
+              className="w-7 h-7 text-[#2A0404]"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M6.62 10.79a15.466 15.466 0 006.59 6.59l2.2-2.2a1 1 0 011-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1C10.85 21 3 13.15 3 3a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.24 1l-2.21 2.23z" />
+            </svg>
+          </a>
+        </div>
 
-      <div className="fixed bottom-26 right-6 z-[9999] md:bottom-30">
-  <a
-    href="tel:+971552635229"
-    className="relative call-ring w-16 h-16 rounded-full bg-white border border-[#C9A84C] flex items-center justify-center shadow-2xl"
-  >
-    <svg
-      className="w-7 h-7 text-[#2A0404]"
-      fill="currentColor"
-      viewBox="0 0 24 24"
-    >
-      <path d="M6.62 10.79a15.466 15.466 0 006.59 6.59l2.2-2.2a1 1 0 011-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1C10.85 21 3 13.15 3 3a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.24 1l-2.21 2.23z" />
-    </svg>
-  </a>
-</div>
       </body>
     </html>
   );

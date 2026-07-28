@@ -16,12 +16,12 @@ export function Hero() {
     {text:"Excellence.",italic:false},
   ];
 
-  const STATS = [
-    {v:"120+", label:"PROJECTS"},
-    {v:"8", label:"YEARS"},
-    {v:"24/7", label:"SUPPORT"},
-    {v:"4.9", label:"RATING"},
-  ];
+ const STATS = [
+  {v:"100+", label:"DIGITAL PROJECTS"},
+  {v:"10+", label:"INDUSTRIES SERVED"},
+  {v:"24/7", label:"TECHNICAL SUPPORT"},
+  {v:"98%", label:"CLIENT SATISFACTION"},
+];
 
   return (
     <section ref={ref} style={{
@@ -203,7 +203,7 @@ export function Hero() {
               lineHeight: 1.7,
               flex: "1 1 300px"
             }}>
-            Web development, mobile apps, UI/UX design, and SEO — crafted with obsessive attention for brands that refuse to be ordinary.
+           Web platforms, marketing systems, and content — meticulously crafted to help ambitious brands grow, compete, and lead.
           </motion.p>
           
           <motion.div 

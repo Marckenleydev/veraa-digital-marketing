@@ -3,10 +3,10 @@ import { useState, useRef } from "react";
 import { motion, useInView, AnimatePresence, LayoutGroup } from "framer-motion";
 import { Footer } from "../components/Footer";
 import { Navbar } from "../components/Navbar";
-import { PROJECTS,CATEGORIES } from "../data";
+import { PROJECTS,CATEGORIES , T } from "../data";
 import { Cursor } from "../components/Cursor";
 import { CaseModal } from "../components/CaseModal";
-import { T } from "../data";
+
 
 const ease=[0.22,1,0.36,1];
 

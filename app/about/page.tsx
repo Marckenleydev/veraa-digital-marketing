@@ -1,11 +1,13 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
-import { TEAM, VALUES, MILESTONES, SKILLS } from "../data";
+import {  VALUES, MILESTONES, SKILLS } from "../data";
 import { Cursor } from "../components/Cursor";
 import { Navbar } from "../components/Navbar";
 import { T } from "../data";
 import { Footer } from "../components/Footer";
+import { TeamCard } from "../components/TeamCard";
+import { Loading } from "../components/Loading";
 
 const ease=[0.22,1,0.36,1];
 const fadeUp={hidden:{opacity:0,y:36},visible:{opacity:1,y:0,transition:{duration:0.75,ease}}};
@@ -167,7 +169,12 @@ function Hero(){
 
 /* ── STATS BAR ── */
 function StatsBar(){
-  const stats=[{v:"87+",label:"Projects"},{v:"4",label:"Countries"},{v:"98%",label:"Satisfaction"},{v:"4yr",label:"Experience"}];
+   const stats = [
+  {v:"100+", label:"DIGITAL PROJECTS"},
+  {v:"10+", label:"INDUSTRIES SERVED"},
+  {v:"24/7", label:"TECHNICAL SUPPORT"},
+  {v:"98%", label:"CLIENT SATISFACTION"},
+];
   
   return(
     <div style={{
@@ -450,7 +457,7 @@ function Skills(){
             marginBottom: "clamp(12px, 2vh, 16px)",
             wordBreak: "break-word"
           }}>
-            Senior Talent,<br/><span style={{fontStyle: "italic", color: T.amber}}>No Juniors Here.</span>
+            Experienced Specialists,<br/><span style={{fontStyle: "italic", color: T.amber}}>Focused on Results.</span>
           </h2>
           
           <p style={{
@@ -461,7 +468,7 @@ function Skills(){
             marginBottom: "clamp(28px, 5vh, 36px)",
             maxWidth: "100%"
           }}>
-            Every member of the CODEVERAA team has at minimum 5 years of production experience. We hire slow and stay small intentionally — so every project gets senior attention.
+            Every member of the CODEVERAA team has at minimum 4 years of production experience. We hire slow and stay small intentionally — so every project gets senior attention.
           </p>
           
           {[{i:"◈", t:"100% Senior Talent", b:"No account managers, no handoffs. You talk directly to the engineers building your product."},
@@ -628,7 +635,7 @@ function Skills(){
                 marginBottom: "clamp(12px, 2vh, 16px)",
                 wordBreak: "break-word"
               }}>
-                "We don't just ship code — we ship clarity, performance, and pride."
+                &quot;We don&apos;t just build digital solutions — we create experiences that deliver clarity, performance, and measurable growth.&quot;
               </p>
               
               <footer style={{
@@ -653,7 +660,7 @@ function Skills(){
                     fontWeight: 900,
                     fontSize: "clamp(11px, 2vw, 13px)"
                   }}>
-                    A
+                    M
                   </span>
                 </div>
                 
@@ -666,7 +673,7 @@ function Skills(){
                     color: `${T.ink}65`,
                     whiteSpace: "nowrap"
                   }}>
-                    Alex Mercer
+                    Marckenley Dorsainvil
                   </span>
                   <span style={{
                     fontFamily: "'JetBrains Mono',monospace",
@@ -734,6 +741,28 @@ function Timeline(){
 /* ── TEAM ── */
 function Team(){
   const [r,v]=useRev();
+
+  const [team, setTeam] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchTeam = async () => {
+      try {
+        const res = await fetch("/api/team");
+        const data = await res.json();
+
+        setTeam(data.team || []);
+      } catch (err) {
+        console.error("Failed to fetch team", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchTeam();
+
+},[])
+
   return(
     <section style={{background:T.cream,padding:"120px 24px",borderTop:`1px solid ${T.sand}30`}}>
       <div style={{maxWidth:1200,margin:"0 auto"}}>
@@ -746,23 +775,16 @@ function Team(){
             People Behind<br/><span style={{fontStyle:"italic",color:T.amber}}>The Work.</span>
           </motion.h2>
         </motion.div>
+           {loading && <Loading />}
+
+  {!loading && team.length === 0 && (
+    <p style={{padding:20}}>No team members found.</p>
+  )}
         <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(280px,1fr))",gap:1,background:`${T.sand}30`}}>
-          {TEAM.map((member,i)=>{
-            const [mr,mv]=useRev("-50px");
-            const [hov,setHov]=useState(false);
-            return(
-              <motion.div key={member.name} ref={mr} initial={{opacity:0,y:24}} animate={mv?{opacity:1,y:0}:{}}
-                transition={{duration:0.6,delay:(i%3)*0.1}} onMouseEnter={()=>setHov(true)} onMouseLeave={()=>setHov(false)}
-                style={{background:hov?T.creamDark:T.cream,padding:32,transition:"background 0.3s"}} data-h>
-                <div style={{width:52,height:52,background:hov?member.color:`${member.color}20`,display:"flex",alignItems:"center",justifyContent:"center",marginBottom:16,transition:"background 0.3s",border:`1px solid ${member.color}40`}}>
-                  <span style={{fontFamily:"Georgia,serif",fontWeight:900,color:hov?T.cream:member.color,fontSize:16,transition:"color 0.3s"}}>{member.ini}</span>
-                </div>
-                <h3 style={{fontFamily:"'Syne',sans-serif",fontWeight:800,fontSize:15,color:T.ink,marginBottom:4}}>{member.name}</h3>
-                <p style={{fontFamily:"'Syne',sans-serif",fontSize:12,color:`${T.ink}50`,marginBottom:12}}>{member.role}</p>
-                <p style={{fontFamily:"'JetBrains Mono',monospace",fontSize:10,color:`${T.ink}35`,lineHeight:1.65,letterSpacing:"0.06em"}}>{member.exp}</p>
-              </motion.div>
-            );
-          })}
+       
+          {team.map((member, i) => (
+  <TeamCard key={member._id} member={member} i={i} />
+))}
         </div>
       </div>
     </section>

@@ -18,7 +18,11 @@ function useRev(margin="-70px") {
 export function About() {
   const [lRef,lV] = useRev();
   const [rRef,rV] = useRev();
-  const skills = [{n:"Frontend Engineering",p:98},{n:"Mobile Development",p:92},{n:"UI / UX Design",p:95},{n:"SEO & Performance",p:90}];
+ const skills = [
+  { n: "Paid Advertising (Meta & Google)", p: 92 },
+  { n: "Web Development & Conversion Optimization", p: 90 },
+  { n: "Content & Creative Production", p: 85 }
+];
 
   return (
     <section id="about" style={{
@@ -296,7 +300,7 @@ export function About() {
                 lineHeight: 1.55,
                 marginBottom: "clamp(12px, 2vh, 16px)"
               }}>
-                "We don't just ship code — we ship clarity, performance, and pride."
+                "We don't just build digital solutions — we create experiences that deliver clarity, performance, and measurable growth."
               </p>
               
               <footer style={{

@@ -3,6 +3,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
+
+export const dynamic = 'force-dynamic';
 import TeamSection from './sections/TeamSection';
 import WorksSection from './sections/WorksSection';
 import ProjectsSection from './sections/ProjectsSection';

@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+export const dynamic = 'force-dynamic';
+
 /* ── DESIGN TOKENS (matches site + dashboard + login exactly) ── */
 const T = {
   cream: "#F5F0E8", creamDark: "#EDE7D9",

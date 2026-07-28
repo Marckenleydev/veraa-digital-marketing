@@ -4,6 +4,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSearchParams } from "next/navigation";
 
+export const dynamic = 'force-dynamic';
+
 /* ── DESIGN TOKENS (matches site + dashboard exactly) ── */
 const T = {
   cream: "#F5F0E8", creamDark: "#EDE7D9",

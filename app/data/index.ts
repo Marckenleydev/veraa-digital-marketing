@@ -161,9 +161,9 @@ export const SKILLS = [
 export const SERVICESHome = [
   { n:"01", title:"Web Development & Design",   desc:"High-performance apps built with Next.js, React, and TypeScript. Scalable, accessible, and blazing fast.", tags:["Next.js","React","Node.js","TypeScript"] },
 
-  { n:"03", title:"Meta Ads",      desc:"Data-driven Meta Ads campaigns that combine high-converting creatives with precise audience targeting to generate consistent leads and measurable ROI.", tags:["Meta Ads","Google Ads","Content Production","SEO Strategy"] },
+  { n:"02", title:"Meta Ads",      desc:"Data-driven Meta Ads campaigns that combine high-converting creatives with precise audience targeting to generate consistent leads and measurable ROI.", tags:["Meta Ads","Google Ads","Content Production","SEO Strategy"] },
    { 
-    n:"04",
+    n:"03",
     title:"Content Production",
     desc:"High-impact visual content for social media and brands. From photoshoots to cinematic video, crafted to engage, convert, and elevate your digital presence.",
     tags:["Photography","Videography","Reels","Brand Content","Social Media"]

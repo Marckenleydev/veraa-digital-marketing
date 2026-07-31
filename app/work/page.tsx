@@ -115,11 +115,13 @@ export default function WorkPage(){
           </motion.div>
           <motion.h1 initial={{opacity:0,y:40}} animate={v?{opacity:1,y:0}:{}} transition={{duration:1,delay:0.2,ease}}
             style={{fontFamily:"Georgia,'Playfair Display',serif",fontSize:"clamp(3rem,8vw,8rem)",fontWeight:900,lineHeight:0.9,letterSpacing:"-0.03em",color:T.ink,marginBottom:28,maxWidth:800}}>
-            Projects That<br/><span style={{fontStyle:"italic",color:T.amber}}>Define Us.</span>
+            Selected Work &
+            <br/>
+           <span style={{ fontStyle: "italic", color: T.amber, whiteSpace: "nowrap" }}>Case Studies.</span>
           </motion.h1>
           <motion.p initial={{opacity:0,y:20}} animate={v?{opacity:1,y:0}:{}} transition={{duration:0.8,delay:0.45}}
             style={{fontFamily:"'Syne',sans-serif",color:`${T.ink}65`,fontSize:17,maxWidth:440,lineHeight:1.75}}>
-            A curated selection of products we're proud of. Every project is a partnership built on trust.
+            A selection of digital experiences we&apos;ve crafted for ambitious brands. Every project reflects strategy, creativity, and a commitment to delivering exceptional results.
           </motion.p>
         </div>
       </section>

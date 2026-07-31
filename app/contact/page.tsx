@@ -8,7 +8,6 @@ import { Cursor } from "../components/Cursor";
 import { ContactSidebar } from "../components/ContactSider";
 import { MultiStepForm } from "../components/MultiStepFom";
 const ease=[0.22,1,0.36,1];
-const stag=(d=0)=>({hidden:{},visible:{transition:{staggerChildren:0.1,delayChildren:d}}});
 function useRev(m:"-70px"){const r=useRef(null);const v=useInView(r,{once:true,margin:m});return [r,v];}
 
 
@@ -124,8 +123,6 @@ export default function ContactPage(){
   }} className="offices-grid">
     {[
       {city:"Dubai", addr:"Business Bay, Dubai UAE", tz:"GMT+4", flag:"🇦"},
-      {city:"Istanbul", addr:"Maltepe, Istanbul TR", tz:"GMT+3", flag:"🇹"},
-      {city:"São Paulo", addr:"Pinheiros, São Paulo BR", tz:"GMT-3", flag:"🇧"},
       {city:"Remote", addr:"Serving clients worldwide", tz:"Your timezone", flag:"🇧"}
     ].map(office => (
       <div key={office.city} style={{

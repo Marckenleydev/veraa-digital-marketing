@@ -68,8 +68,8 @@ export function Work() {
             lineHeight: 1.05,
             margin: 0
           }}>
-            Projects That<br />
-            <span style={{ fontStyle: "italic", color: T.amber }}>Define Us.</span>
+            Selected Work & <br />
+            <span style={{ fontStyle: "italic", color: T.amber }}>Case Studies.</span>
           </motion.h2>
         </motion.div>
 

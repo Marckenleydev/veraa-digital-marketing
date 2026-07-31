@@ -218,7 +218,7 @@ export function Hero() {
               flex: "1 1 auto",
               justifyContent: "flex-start"
             }}>
-            <a href="#work" data-h
+            <a href="/work" data-h
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -240,7 +240,7 @@ export function Hero() {
               See Our Work <span style={{fontSize: "clamp(16px, 3vw, 18px)"}}>→</span>
             </a>
             
-            <a href="#contact" data-h
+            <a href="/contact" data-h
               style={{
                 fontFamily: "'Syne',sans-serif",
                 fontSize: "clamp(11px, 2vw, 13px)",

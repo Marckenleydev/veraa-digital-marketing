@@ -34,12 +34,12 @@ export function Footer() {
           </div>
         </div>
         <div style={{display:"flex",flexWrap:"wrap",alignItems:"center",justifyContent:"space-between",gap:12}}>
-          <span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:10,color:`${T.cream}20`,letterSpacing:"0.18em"}}>© 2024 CRAFT.STUDIO — All rights reserved.</span>
+          <span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:10,color:`${T.cream}30`,letterSpacing:"0.18em"}}>© 2024 CRAFT.STUDIO — All rights reserved.</span>
           <div style={{display:"flex",alignItems:"center",gap:8}}>
             <span style={{width:6,height:6,borderRadius:"50%",background:"#4ade80"}} />
-            <span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:10,color:`${T.cream}22`,letterSpacing:"0.18em"}}>Open for new projects</span>
+            <span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:10,color:`${T.cream}30`,letterSpacing:"0.18em"}}>Open for new projects</span>
           </div>
-          <span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:10,color:`${T.cream}16`,letterSpacing:"0.16em"}}>Built with Next.js · Tailwind · Framer Motion</span>
+          <span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:10,color:`${T.cream}30`,letterSpacing:"0.16em"}}>Strategy · Creativity · Technology · Growth</span>
         </div>
       </div>
     </footer>

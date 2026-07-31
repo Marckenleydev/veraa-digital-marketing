@@ -178,7 +178,7 @@ export function ContactSidebar(){
           marginBottom: "clamp(16px, 3vh, 20px)",
           wordBreak: "break-word"
         }}>
-          We take 3–4 new projects per quarter. Next available slot: <span style={{color:`${T.cream}50`}}>Q3 2024</span>
+         Limited partnerships available for 2026. We reserve our capacity for brands looking for strategic digital growth and exceptional execution.
         </p>
         
         <div style={{

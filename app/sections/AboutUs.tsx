@@ -96,7 +96,7 @@ export function About() {
             fontSize: "clamp(13px, 2.2vw, 14px)",
             maxWidth: "100%"
           }}>
-            We're a tight-knit team of senior engineers, product designers, and growth strategists united by one belief: digital products should be beautiful <em>and</em> performant.
+           A team of technology, creativity, and strategy working together to transform ideas into digital experiences <em>that</em> perform.
           </p>
           
           <p style={{
@@ -106,13 +106,26 @@ export function About() {
             marginBottom: "clamp(28px, 5vh, 36px)",
             fontSize: "clamp(13px, 2.2vw, 14px)"
           }}>
-            Since 2019 we've partnered with startups and scale-ups across Europe, the Middle East, and North America. We don't do templated work — every project starts from first principles.
+           Since 2022, we’ve partnered with businesses, and ambitious brands across Europe, the Middle East, From digital products to growth campaigns, we create tailored solutions built around strategy, innovation, and measurable results.
           </p>
           
-          {[{i:"◈", t:"Craft First", b:"We treat every project as a long-term piece of our portfolio."},
-            {i:"◉", t:"Radical Transparency", b:"No black boxes — you see progress weekly, every decision explained."},
-            {i:"⬡", t:"Obsessive Performance", b:"Sub-second loads, perfect Lighthouse scores, flawless accessibility."}
-          ].map((v, vi) => (
+          {[
+  {
+    i:"◈",
+    t:"Purposeful Creation",
+    b:"We craft every digital experience with intention, combining strategy, design, and technology to elevate brands."
+  },
+  {
+    i:"◉",
+    t:"Complete Partnership",
+    b:"We work alongside our clients with transparency, communication, and a shared commitment to success."
+  },
+  {
+    i:"⬡",
+    t:"Results Driven",
+    b:"From digital products to marketing campaigns, every solution is built to engage audiences and accelerate growth."
+  }
+].map((v, vi) => (
             <motion.div 
               key={v.t} 
               initial={{opacity:0, x:-16}} 

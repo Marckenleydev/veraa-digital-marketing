@@ -7,8 +7,12 @@ import {T} from "../data"
 const ease=[0.22,1,0.36,1];
 
 
-const SERVICES_LIST=["Web Development","Mobile App","SEO Strategy","Content & Media"];
-const BUDGETS=["< $2k","$4k – $8k","$12k – $20k"];
+const SERVICES_LIST = [
+  "Web Development",
+  "Meta Ads",
+  "Content & Media Production"
+];
+const BUDGETS=["< AED 5k","AED 10k – AED 20k","AED 20k – AED 50k"];
 const TIMELINES=["ASAP (< 1 month)","1 – 3 months","3 – 6 months","6+ months / Ongoing","Flexible"];
 const STEPS=[{id:1,l:"Project Type"},{id:2,l:"Details"},{id:3,l:"About You"},{id:4,l:"Timeline"}];
 

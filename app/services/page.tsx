@@ -84,7 +84,7 @@ function Hero(){
         <motion.div initial={{opacity:0,y:20}} animate={v?{opacity:1,y:0}:{}} transition={{duration:0.8,delay:0.45}}
           style={{display:"flex",flexWrap:"wrap",alignItems:"flex-end",justifyContent:"space-between",gap:32,marginTop:40}}>
           <p style={{fontFamily:"'Syne',sans-serif",color:`${T.ink}65`,fontSize:17,maxWidth:440,lineHeight:1.75}}>
-            Four core disciplines. One integrated senior team. Every service is engineered with performance, scale, and your business goals at the centre.
+            Three core disciplines. One integrated senior team. Every service engineered for performance, scale, and your business goals.
           </p>
           <a href="/contact" data-h
             style={{display:"flex",alignItems:"center",gap:14,background:T.ink,color:T.cream,fontFamily:"'Syne',sans-serif",fontWeight:700,fontSize:12,letterSpacing:"0.22em",textTransform:"uppercase",padding:"18px 32px",textDecoration:"none",transition:"background 0.3s"}}

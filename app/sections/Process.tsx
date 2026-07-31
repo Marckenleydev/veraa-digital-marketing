@@ -78,7 +78,7 @@ export function Process() {
               }}>
               Our Process —<br/>
               <span style={{fontStyle: "italic", color: T.amber}}>
-                No Surprises.
+                Structured for Results.
               </span>
             </motion.h2>
           </div>
@@ -93,7 +93,7 @@ export function Process() {
               fontSize: "clamp(13px, 2vw, 14px)",
               marginBottom: "clamp(8px, 2vh, 16px)"
             }}>
-            A repeatable framework refined over five years and 87 projects. Transparent, collaborative, always on time.
+            A repeatable framework refined over four years and 87 projects. Transparent, collaborative, always on time.
           </motion.p>
         </motion.div>
 

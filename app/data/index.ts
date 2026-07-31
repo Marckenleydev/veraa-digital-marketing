@@ -12,7 +12,23 @@ export const SERVICES = [
     desc:"We architect and build web products that are fast by default, maintainable by design, and engineered to grow with your business. From marketing sites to complex SaaS platforms, we've shipped it all.",
     features:["Next.js / React / Node.js","REST & GraphQL APIs","Database design & optimisation","Authentication & authorisation","CI/CD pipeline setup","Core Web Vitals & Lighthouse 100"],
     tech:["Next.js","TypeScript","Node.js","PostgreSQL","Redis","Vercel / AWS"],
-    tiers:[{n:"Starter",p:"$1,200",d:"Marketing site or landing page"},{n:"Growth",p:"$3,800",d:"Full web app + backend"},{n:"Enterprise",p:"Custom",d:"Complex platform or migration"}],
+tiers: [
+  { 
+    n: "Starter", 
+    p: "AED 12,000", 
+    d: "High-converting marketing website (up to 5 pages)" 
+  },
+  { 
+    n: "Growth", 
+    p: "AED 18,000", 
+    d: "Custom website with CMS and scalable backend integration" 
+  },
+  { 
+    n: "Enterprise", 
+    p: "Custom", 
+    d: "Advanced platforms, web applications, or system migrations" 
+  }
+]
   },
   
   {
@@ -37,11 +53,23 @@ export const SERVICES = [
     "Looker Studio",
     "Canva / Adobe Creative Suite"
   ],
-  tiers:[
-    {n:"Starter",p:"$800",d:"Campaign setup + initial ad strategy"},
-    {n:"Growth",p:"$2,000/mo",d:"Full campaign management & optimization"},
-    {n:"Scale",p:"Custom",d:"Advanced advertising strategy + creative production"}
-  ],
+  tiers: [
+  {
+    n: "Starter",
+    p: "AED 3,000",
+    d: "Campaign setup, tracking (Pixel), and initial ad strategy"
+  },
+  {
+    n: "Growth",
+    p: "AED 8,000/mo",
+    d: "Full Meta Ads management, testing, optimization, and performance reporting"
+  },
+  {
+    n: "Scale",
+    p: "Custom",
+    d: "Advanced scaling strategy, creative production, and multi-campaign management"
+  }
+]
 },
   {
   n:"03",
@@ -65,11 +93,23 @@ export const SERVICES = [
     "Figma (storyboarding)",
     "CapCut / Mobile workflows"
   ],
-  tiers:[
-    { n:"Starter", p:"$600", d:"1 shoot session + edited content pack" },
-    { n:"Growth", p:"$1,800", d:"Full campaign (photo + video content)" },
-    { n:"Studio", p:"Custom", d:"Ongoing monthly content production" }
-  ],
+ tiers: [
+  { 
+    n: "Starter", 
+    p: "AED 3,500", 
+    d: "Single content shoot session with professionally edited photo/video assets" 
+  },
+  { 
+    n: "Growth", 
+    p: "AED 9,000", 
+    d: "Full content production (photo + video) for campaigns, including editing and delivery" 
+  },
+  { 
+    n: "Studio", 
+    p: "Custom", 
+    d: "Ongoing monthly content production, creative direction, and asset delivery" 
+  }
+]
 }
 ];
 

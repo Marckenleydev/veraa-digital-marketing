@@ -12,9 +12,9 @@ export function Footer() {
         <div style={{display:"flex",flexWrap:"wrap",alignItems:"center",justifyContent:"space-between",gap:32,paddingBottom:40,marginBottom:32,borderBottom:`1px solid ${T.cream}07`}}>
           <a href="#" data-h style={{display:"flex",alignItems:"center",gap:12,textDecoration:"none"}}>
             <div style={{width:36,height:36,background:T.amber,display:"flex",alignItems:"center",justifyContent:"center"}}>
-              <span style={{color:T.ink,fontFamily:"Georgia,serif",fontWeight:900,fontSize:14}}>C</span>
+              <span style={{color:T.ink,fontFamily:"Georgia,serif",fontWeight:900,fontSize:14}}>V</span>
             </div>
-            <span style={{fontFamily:"'Syne',sans-serif",fontWeight:800,fontSize:13,letterSpacing:"0.22em",color:T.cream,textTransform:"uppercase"}}>CODEVERAA<span style={{color:T.amber}}>.</span>STUDIO</span>
+            <span style={{fontFamily:"'Syne',sans-serif",fontWeight:800,fontSize:13,letterSpacing:"0.22em",color:T.cream,textTransform:"uppercase"}}>VERAA<span style={{color:T.amber}}>.</span>DIGITAL</span>
           </a>
           <nav style={{display:"flex",flexWrap:"wrap",gap:32}}>
             {NAV.map(l=>(
@@ -34,7 +34,7 @@ export function Footer() {
           </div>
         </div>
         <div style={{display:"flex",flexWrap:"wrap",alignItems:"center",justifyContent:"space-between",gap:12}}>
-          <span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:10,color:`${T.cream}30`,letterSpacing:"0.18em"}}>© 2024 CRAFT.STUDIO — All rights reserved.</span>
+          <span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:10,color:`${T.cream}30`,letterSpacing:"0.18em"}}>© 2026 CRAFT.STUDIO — All rights reserved.</span>
           <div style={{display:"flex",alignItems:"center",gap:8}}>
             <span style={{width:6,height:6,borderRadius:"50%",background:"#4ade80"}} />
             <span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:10,color:`${T.cream}30`,letterSpacing:"0.18em"}}>Open for new projects</span>

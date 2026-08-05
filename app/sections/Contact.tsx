@@ -120,9 +120,9 @@ export function Contact() {
             </motion.p>
             
             {/* Contact Info Items */}
-            {[{l:"Email", v:"info@codeveraa.com"},
+            {[{l:"Email", v:"info@veraa.digital"},
               {l:"Based in", v:"Dubai · Remote"},
-              {l:"Availability", v:"Open for Q3 2024 projects"}
+              {l:"Availability", v:"Currently onboarding select projects."}
             ].map(item => (
               <div key={item.l} style={{
                 display: "flex",

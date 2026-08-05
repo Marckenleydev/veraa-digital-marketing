@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://codeveraa.com/sitemap.xml",
+    sitemap: "https://veraadigital.com/sitemap.xml",
   };
 }

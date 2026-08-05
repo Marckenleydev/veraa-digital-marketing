@@ -14,15 +14,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://codeveraa.com"),
+  metadataBase: new URL("https://veraadigital.com"),
 
   title: {
-    default: "Codeveraa Studio | Marketing Digital Agency",
-    template: "%s | Codeveraa Studio",
+    default: "veraa digital  | Marketing Digital Agency",
+    template: "%s | veraadigital ",
   },
 
   description:
-    "Codeveraa Studio is a premium software and digital solutions agency founded by Marckenley Dorsainvil, specializing in modern websites, AI integrations, scalable platforms, and digital experiences for businesses worldwide.",
+    "veraadigital  is a premium software and digital solutions agency founded by Marckenley Dorsainvil, specializing in modern websites, AI integrations, scalable platforms, and digital experiences for businesses worldwide.",
 
   keywords: [
     "Marckenley Dorsainvil",
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
     "modern web applications",
   ],
 
-  authors: [{ name: "Codeveraa Studio" }],
-  creator: "Codeveraa Studio",
-  publisher: "Codeveraa Studio",
+  authors: [{ name: "veraadigital " }],
+  creator: "veraadigital ",
+  publisher: "veraadigital ",
 
   robots: {
     index: true,
@@ -49,18 +49,18 @@ export const metadata: Metadata = {
   
 
   openGraph: {
-    title: "Codeveraa Studio | Marketing Digital & AI Solutions",
+    title: "veraa digital | Marketing Digital & AI Solutions",
     description:
       "We design and build high-performance websites, AI-powered systems, and scalable digital products for startups and enterprises.",
       
-    url: "https://codeveraa.com",
-    siteName: "Codeveraa Studio",
+    url: "https://veraadigital.com",
+    siteName: "veraadigital ",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Codeveraa Studio Marketing Digital Agency",
+        alt: "veraadigital  Marketing Digital Agency",
       },
     ],
     locale: "en_US",
@@ -69,26 +69,26 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Codeveraa Studio | Web & AI Development",
+    title: "veraadigital | Web & AI Development",
     description:
       "Premium Marketing Digital, AI solutions, and scalable software built for modern businesses.",
     images: ["/og-image.jpg"],
   },
 
   icons: {
-    icon: [
-      {
-        url: "/favicon.ico",
-        sizes: "any",
-      },
-      {
-        url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000000'/%3E%3Ctext x='50%25' y='50%25' font-family='Georgia,serif' font-size='16' font-weight='900' fill='%23FFFACD' text-anchor='middle' dominant-baseline='middle'%3EC%3C/text%3E%3C/svg%3E",
-        type: "image/svg+xml",
-        sizes: "32x32",
-      },
-    ],
-    apple: "/apple-icon.png",
-  },
+  icon: [
+    {
+      url: "/favicon.ico",
+      sizes: "any",
+    },
+    {
+      url: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000000'/%3E%3Ctext x='50%25' y='50%25' font-family='Georgia,serif' font-size='16' font-weight='900' fill='%23FFFACD' text-anchor='middle' dominant-baseline='middle'%3EV%3C/text%3E%3C/svg%3E",
+      type: "image/svg+xml",
+      sizes: "32x32",
+    },
+  ],
+  apple: "/apple-icon.png",
+},
 
   category: "technology",
 };
@@ -103,19 +103,19 @@ export default function RootLayout({
     "@type": "Person",
     "name": "Marckenley Dorsainvil",
     "jobTitle": "Founder, Engineer & Digital Marketing Strategist",
-    "url": "https://codeveraa.com",
+    "url": "https://veraadigital.com",
     "worksFor": {
       "@type": "Organization",
-      "name": "Codeveraa Studio",
-      "url": "https://codeveraa.com"
+      "name": "Veraa digital ",
+      "url": "https://veraadigital.com"
     }
   };
 
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Codeveraa Studio",
-    "url": "https://codeveraa.com",
+    "name": "Veraa digital ",
+    "url": "https://veraadigital.com",
     "founder": {
       "@type": "Person",
       "name": "Marckenley Dorsainvil"

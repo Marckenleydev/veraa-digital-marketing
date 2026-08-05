@@ -162,7 +162,7 @@ export default function Dashboard() {
               <span style={{ color: T.cream, fontFamily: "Georgia, serif", fontWeight: 900, fontSize: 12 }}>C</span>
             </div>
             <span style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: 12, letterSpacing: "0.22em", color: T.ink, textTransform: "uppercase" }}>
-              CODEVERAA<span style={{ color: T.amber }}>.</span>STUDIO
+              VERAA<span style={{ color: T.amber }}>.</span>DIGITAL
             </span>
             <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 9, color: `${T.ink}35`, letterSpacing: "0.2em", textTransform: "uppercase", marginLeft: 8, borderLeft: `1px solid ${T.sand}50`, paddingLeft: 12 }}>
               Dashboard

@@ -114,11 +114,30 @@ tiers: [
 ];
 
 export const FAQS = [
-  {q:"How long does a typical project take?",a:"Web projects run 6–12 weeks. Mobile apps 10–16 weeks. Design sprints can be completed in 5 days. We give precise timelines after your discovery call."},
-  {q:"Do you work with early-stage startups?",a:"Absolutely. Some of our best work has been helping founders build their first product. We're comfortable with ambiguity and help shape product direction from the ground up."},
-  {q:"Can you take over an existing codebase?",a:"Yes. We start every handoff with a code audit and documentation review, then onboard incrementally so nothing breaks in production."},
-  {q:"Do you offer post-launch support?",a:"Yes — monthly retainer agreements that include bug fixes, performance monitoring, feature development, and priority support SLAs."},
-  {q:"What does your development process look like?",a:"Discovery → Strategy → Design → Agile sprints with weekly demos → QA → Launch → Growth. You're involved at every stage with full transparency."},
+  {
+    q: "How long does a typical project take?",
+    a: "Web development projects typically take 4–10 weeks depending on scope. Content production can be delivered within days, while Meta Ads campaigns can be launched within 5–7 days after strategy approval."
+  },
+  {
+    q: "Do you work with startups or only established businesses?",
+    a: "We work with both. From early-stage startups building their first presence to established brands scaling with performance marketing and content systems."
+  },
+  {
+    q: "Do you manage Meta Ads or just set them up?",
+    a: "We offer both. From initial campaign setup and tracking to full monthly management, optimization, and scaling strategies focused on ROI."
+  },
+  {
+    q: "What’s included in your content production service?",
+    a: "We handle the full pipeline: concept, shooting (photo/video), editing, and delivery of high-performing content tailored for ads and social media."
+  },
+  {
+    q: "Can you handle everything end-to-end?",
+    a: "Yes. We combine web development, content production, and paid advertising into one integrated system designed to drive measurable business results."
+  },
+  {
+    q: "Do you offer ongoing support and growth services?",
+    a: "Yes. We provide monthly retainers covering website maintenance, content production, and continuous Meta Ads optimization and scaling."
+  }
 ];
 
 
@@ -177,12 +196,27 @@ export const VALUES=[
   {i:"◎",t:"Continuous Learning",d:"The web moves fast. We allocate 20% of our time to R&D so your projects always use the right tools."},
 ];
 
-export const MILESTONES=[
-  {year:"2022",event:"Studio founded",desc:"Started as a two-person consultancy building MVPs for startups."},
-  {year:"2023",event:"First enterprise client",desc:"Landed first €100k+ contract with a Series B fintech company."},
-  {year:"2024",event:"Mobile practice launched",desc:"Expanded into React Native as mobile demand surged post-pandemic."},
-  {year:"2025",event:"Team of 8",desc:"Grew to a full-service team with dedicated design, SEO, and QA."},
-  {year:"2026",event:"87+ projects shipped",desc:"Now serving clients across 4 countries, 98% satisfaction rate."},
+export const MILESTONES = [
+  {
+    year: "2023",
+    event: "Foundation",
+    desc: "Built a performance-driven studio focused on modern web development."
+  },
+  {
+    year: "2024",
+    event: "Full-funnel expansion",
+    desc: "Added Meta Ads and content production to drive measurable growth."
+  },
+  {
+    year: "2025",
+    event: "Systemized delivery",
+    desc: "Created an integrated model combining web, ads, and content into one growth engine."
+  },
+  {
+    year: "2026",
+    event: "Scaling brands",
+    desc: "Helping businesses scale through performance marketing and high-converting digital platforms."
+  }
 ];
 
 export const SKILLS = [

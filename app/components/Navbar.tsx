@@ -41,10 +41,10 @@ export function Navbar() {
         <a href="/" data-h className="flex items-center gap-3 group">
           <div className="w-8 h-8 flex items-center justify-center transition-colors duration-300"
             style={{backgroundColor:T.ink}}>
-            <span style={{color:T.cream,fontFamily:"Georgia,serif",fontWeight:900,fontSize:13}}>C</span>
+            <span style={{color:T.cream,fontFamily:"Georgia,serif",fontWeight:900,fontSize:13}}>V</span>
           </div>
           <span style={{fontFamily:"'Syne',system-ui,sans-serif",fontWeight:800,fontSize:13,letterSpacing:"0.22em",color:T.ink,textTransform:"uppercase"}}>
-            CODEVERAA<span style={{color:T.amber}}>.</span>STUDIO
+            VERAA<span style={{color:T.amber}}>.</span>DIGITAL
           </span>
         </a>
         

@@ -70,7 +70,7 @@ function BrandPanel() {
           <span style={{ color: T.ink, fontFamily: "Georgia, serif", fontWeight: 900, fontSize: 14 }}>C</span>
         </div>
         <span style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: 13, letterSpacing: "0.22em", color: T.cream, textTransform: "uppercase" }}>
-          CODEVERAA<span style={{ color: T.amber }}>.</span>STUDIO
+          veraadigital<span style={{ color: T.amber }}>.</span>STUDIO
         </span>
       </motion.a>
 
@@ -97,7 +97,7 @@ function BrandPanel() {
           {[
             { i: "◈", t: "Invite-only access", b: "New accounts are reviewed before activation." },
             { i: "◉", t: "One workspace", b: "Team, works, projects, and services in one place." },
-            { i: "⬡", t: "Built for the studio", b: "Tailored to how CODEVERAA actually ships." },
+            { i: "⬡", t: "Built for the studio", b: "Tailored to how veraadigital actually ships." },
           ].map(item => (
             <div key={item.t} style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
               <span style={{ color: T.amber, fontSize: 15, marginTop: 1, flexShrink: 0 }}>{item.i}</span>
@@ -222,7 +222,7 @@ export default function RegisterPage() {
 
               <form onSubmit={handleSubmit}>
                 <FocusInput label="Full Name *" placeholder="Sofia Marchetti" value={name} onChange={e => setName(e.target.value)} required autoComplete="name" />
-                <FocusInput label="Email Address *" type="email" placeholder="you@codeveraa.studio" value={email} onChange={e => setEmail(e.target.value)} required autoComplete="email" />
+                <FocusInput label="Email Address *" type="email" placeholder="you@veraadigital.studio" value={email} onChange={e => setEmail(e.target.value)} required autoComplete="email" />
 
                 <div style={{ marginBottom: 8 }}>
                   <FocusInput

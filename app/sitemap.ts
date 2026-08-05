@@ -3,31 +3,31 @@ import { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://codeveraa.com",
+      url: "https://veraadigital.com",
       lastModified: new Date(),
        changeFrequency: 'weekly',
       priority: 1,
     },
     {
-      url: "https://codeveraa.com/services",
+      url: "https://veraadigital.com/services",
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: "https://codeveraa.com/work",
+      url: "https://veraadigital.com/work",
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: "https://codeveraa.com/contact",
+      url: "https://veraadigital.com/contact",
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
-      url: "https://codeveraa.com/about",
+      url: "https://veraadigital.com/about",
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,

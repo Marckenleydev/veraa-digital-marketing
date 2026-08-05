@@ -74,7 +74,7 @@ function BrandPanel({ mode }: { mode: "login" | "register" }) {
           <span style={{ color: T.ink, fontFamily: "Georgia, serif", fontWeight: 900, fontSize: 14 }}>C</span>
         </div>
         <span style={{ fontFamily: "'Syne', sans-serif", fontWeight: 800, fontSize: 13, letterSpacing: "0.22em", color: T.cream, textTransform: "uppercase" }}>
-          CODEVERAA<span style={{ color: T.amber }}>.</span>STUDIO
+          veraa<span style={{ color: T.amber }}>.</span>DIGITAL
         </span>
       </motion.a>
 
@@ -191,7 +191,7 @@ export default function LoginContent() {
           </p>
 
           <form onSubmit={handleSubmit}>
-            <FocusInput label="Email Address *" type="email" placeholder="you@codeveraa.studio" value={email} onChange={e => setEmail(e.target.value)} required autoComplete="email" />
+            <FocusInput label="Email Address *" type="email" placeholder="you@veraadigital.studio" value={email} onChange={e => setEmail(e.target.value)} required autoComplete="email" />
 
             <div style={{ marginBottom: 12 }}>
               <FocusInput

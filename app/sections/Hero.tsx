@@ -291,30 +291,8 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Scroll hint */}
-      <motion.div 
-        initial={{opacity:0}} 
-        animate={{opacity:1}} 
-        transition={{delay:2}}
-        style={{
-          position: "absolute",
-          bottom: "clamp(12px, 3vh, 24px)",
-          left: "50%",
-          transform: "translateX(-50%)",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "clamp(4px, 1vh, 6px)"
-        }}>
-        <motion.div 
-          animate={{y:[0,8,0]}} 
-          transition={{duration:2, repeat:Infinity, ease:"easeInOut"}}
-          style={{
-            width: 1,
-            height: "clamp(24px, 5vh, 40px)",
-            background: `linear-gradient(to bottom, ${T.amber}80, transparent)`
-          }} />
-      </motion.div>
+      
+     
     </section>
   );
 }

@@ -24,7 +24,7 @@ export default function ContactPage(){
 
       {/* Hero */}
       <section style={{background:T.creamDark,padding:"160px 24px 80px",position:"relative",overflow:"hidden"}}>
-        <motion.div initial={{scaleY:0}} animate={{scaleY:1}} transition={{duration:1.2,delay:0.4,ease:"easeOut"}} style={{transformOrigin:"top",position:"absolute",top:0,right:"13%",width:1,height:"44vh",background:`linear-gradient(to bottom,${T.amber}80,transparent)`}}/>
+
         <div ref={r} style={{maxWidth:1200,margin:"0 auto",position:"relative",zIndex:1}}>
           <motion.div initial={{opacity:0,x:-20}} animate={v?{opacity:1,x:0}:{}} transition={{duration:0.8,delay:0.1}} style={{display:"flex",alignItems:"center",gap:16,marginBottom:28}}>
             <span style={{width:48,height:1,background:T.amber,display:"block"}}/>

@@ -24,54 +24,9 @@ function useRev(m="-70px"){ const r=useRef(null); const v=useInView(r,{once:true
 function Hero(){
   const [r,v]=useRev();
   return(
-    <section style={{background:T.cream,padding:"160px 24px 100px",position:"relative",overflow:"hidden"}}>
-     <motion.div 
-        initial={{scale:0.7, opacity:0}} 
-        animate={{scale:1, opacity:1}} 
-        transition={{duration:1.8, ease}}
-        style={{
-          position: "absolute",
-          top: "clamp(-25%, -15vw, -15%)",
-          right: "clamp(-20%, -15vw, -10%)",
-          width: "min(680px, 80vw)",
-          height: "min(680px, 80vw)",
-          borderRadius: "50%",
-          border: `1px solid ${T.sand}50`,
-          pointerEvents: "none"
-        }} 
-      />
-      <motion.div 
-        initial={{scale:0.7, opacity:0}} 
-        animate={{scale:1, opacity:1}} 
-        transition={{duration:1.8, delay:0.15, ease}}
-        style={{
-          position: "absolute",
-          top: "clamp(-15%, -10vw, -7%)",
-          right: "clamp(-10%, -8vw, -4%)",
-          width: "min(480px, 60vw)",
-          height: "min(480px, 60vw)",
-          borderRadius: "50%",
-          border: `1px solid ${T.sand}30`,
-          pointerEvents: "none"
-        }} 
-      />
-      
-      {/* Vertical accent line - responsive height and position */}
-      <motion.div 
-        initial={{scaleY:0}} 
-        animate={{scaleY:1}} 
-        transition={{duration:1.2, delay:0.4, ease}} 
-        style={{
-          transformOrigin: "top",
-          position: "absolute",
-          top: 0,
-          right: "clamp(5%, 10%, 13%)",
-          width: 1,
-          height: "clamp(20vh, 35vh, 44vh)",
-          background: `linear-gradient(to bottom, ${T.amber}90, transparent)`
-        }} 
-      />
+    <section style={{background:T.creamDark,padding:"160px 24px 100px",position:"relative",overflow:"hidden"}}>
       <div style={{position:"absolute",top:"clamp(10%, 15vw, 20%)",right:"clamp(5%, 8vw, 10%)",width:"min(350px, 50vw)",height:"min(350px, 50vw)",borderRadius:"50%",background:`${T.amber}08`,filter:"blur(clamp(40px, 8vw, 80px))",pointerEvents:"none"}}/>
+
       <div ref={r} style={{maxWidth:1200,margin:"0 auto",position:"relative",zIndex:1}}>
         <motion.div initial={{opacity:0,x:-20}} animate={v?{opacity:1,x:0}:{}} transition={{duration:0.8,delay:0.1}} style={{display:"flex",alignItems:"center",gap:16,marginBottom:28}}>
           <span style={{width:48,height:1,background:T.amber,display:"block"}}/>
@@ -87,9 +42,9 @@ function Hero(){
             Three core disciplines. One integrated senior team. Every service engineered for performance, scale, and your business goals.
           </p>
           <a href="/contact" data-h
-            style={{display:"flex",alignItems:"center",gap:14,background:T.ink,color:T.cream,fontFamily:"'Syne',sans-serif",fontWeight:700,fontSize:12,letterSpacing:"0.22em",textTransform:"uppercase",padding:"18px 32px",textDecoration:"none",transition:"background 0.3s"}}
+            style={{display:"flex",alignItems:"center",gap:14,background:T.sand,color:T.cream,fontFamily:"'Syne',sans-serif",fontWeight:700,fontSize:12,letterSpacing:"0.22em",textTransform:"uppercase",padding:"18px 32px",textDecoration:"none",transition:"background 0.3s"}}
             onMouseEnter={e=>e.currentTarget.style.background=T.amber}
-            onMouseLeave={e=>e.currentTarget.style.background=T.ink}>
+            onMouseLeave={e=>e.currentTarget.style.background=T.sand}>
             Get a Free Quote <span style={{fontSize:18}}>→</span>
           </a>
         </motion.div>
@@ -108,7 +63,7 @@ function ServiceBlock({svc,i}){
     <section style={{
       background: i % 2 === 0 ? T.cream : T.creamDark,
       padding: "clamp(60px, 8vh, 100px) clamp(16px, 5vw, 24px)",
-      borderTop: `1px solid ${T.sand}30`,
+      
       width: "100%"
     }}>
       <div style={{
@@ -276,7 +231,7 @@ function ServiceBlock({svc,i}){
                 display: "inline-flex",
                 alignItems: "center",
                 gap: "clamp(10px, 2vw, 14px)",
-                background: T.ink,
+                background: T.sand,
                 color: T.cream,
                 fontFamily: "'Syne',sans-serif",
                 fontWeight: 700,
@@ -290,7 +245,7 @@ function ServiceBlock({svc,i}){
                 whiteSpace: "nowrap"
               }}
               onMouseEnter={e => e.currentTarget.style.background = T.amber}
-              onMouseLeave={e => e.currentTarget.style.background = T.ink}>
+              onMouseLeave={e => e.currentTarget.style.background = T.sand}>
               Start This Project →
             </a>
           </motion.div>
@@ -450,9 +405,9 @@ function CTA(){
           </p>
           <div style={{display:"flex",justifyContent:"center",gap:20,flexWrap:"wrap"}}>
             <a href="/contact" data-h
-              style={{display:"inline-flex",alignItems:"center",gap:14,background:T.ink,color:T.cream,fontFamily:"'Syne',sans-serif",fontWeight:700,fontSize:12,letterSpacing:"0.22em",textTransform:"uppercase",padding:"20px 40px",textDecoration:"none",transition:"background 0.3s"}}
+              style={{display:"inline-flex",alignItems:"center",gap:14,background:T.sand,color:T.cream,fontFamily:"'Syne',sans-serif",fontWeight:700,fontSize:12,letterSpacing:"0.22em",textTransform:"uppercase",padding:"20px 40px",textDecoration:"none",transition:"background 0.3s"}}
               onMouseEnter={e=>e.currentTarget.style.background=T.amber}
-              onMouseLeave={e=>e.currentTarget.style.background=T.ink}>
+              onMouseLeave={e=>e.currentTarget.style.background=T.sand}>
               Book a Discovery Call →
             </a>
             <a href="/work" data-h

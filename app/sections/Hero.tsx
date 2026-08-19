@@ -1,32 +1,87 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { T } from "../data";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ease = [0.22, 1, 0.36, 1];
 
 export function Hero() {
   const ref = useRef(null);
-  const {scrollYProgress} = useScroll({target:ref,offset:["start start","end start"]});
-  const y    = useTransform(scrollYProgress,[0,1],["0%","18%"]);
-  const opac = useTransform(scrollYProgress,[0,0.6],[1,0]);
+  const clipRef = useRef(null);   // outer — holds border-radius, NEVER scales
+  const scaleRef = useRef(null);  // inner — GSAP scales/moves THIS, no radius
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
+  const opac = useTransform(scrollYProgress, [0, 1], [1, 0.75]);
 
-  const words = [
-    {text:"WE CRAFT",   italic:false},
-    {text:"DIGITAL",    italic:true},
-    {text:"Excellence.",italic:false},
+  const lines = [
+    { segments: [
+        { text: "WE TURN", italic: false },
+        { text: "ATTENTION", italic: true },
+      ]
+    },
+    { segments: [
+        { text: "Into Sales.", italic: false },
+      ]
+    },
   ];
 
- const STATS = [
-  {v:"100+", label:"DIGITAL PROJECTS"},
-  {v:"10+", label:"INDUSTRIES SERVED"},
-  {v:"24/7", label:"TECHNICAL SUPPORT"},
-  {v:"98%", label:"CLIENT SATISFACTION"},
-];
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Radius lives on the OUTER, non-scaled element — no compositor conflict
+      gsap.fromTo(clipRef.current,
+        { borderRadius: 50 },
+        {
+          borderRadius: 0,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: clipRef.current,
+            start: "top 90%",
+            end: "top 30%",
+            scrub: 1,
+          },
+        }
+      );
+
+      // Scale/opacity/position live on the INNER element — no radius here at all
+      gsap.fromTo(scaleRef.current,
+        { scale: 0.82, opacity: 0.7, y: 60 },
+        {
+          scale: 1,
+          opacity: 1,
+          y: 0,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: clipRef.current,
+            start: "top 90%",
+            end: "top 30%",
+            scrub: 1,
+          },
+        }
+      );
+
+      // subtle parallax on the video itself while scrolling past
+      gsap.to(scaleRef.current.querySelector("video"), {
+        yPercent: 12,
+        ease: "none",
+        scrollTrigger: {
+          trigger: clipRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+    }, ref);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
     <section ref={ref} style={{
       minHeight: "100vh",
-      background: T.cream,
+      background: T.creamDark,
       position: "relative",
       display: "flex",
       flexDirection: "column",
@@ -34,64 +89,16 @@ export function Hero() {
       paddingBottom: "clamp(40px, 8vh, 80px)",
       overflow: "hidden"
     }}>
-      {/* Dot grid - responsive background size */}
+      {/* Dot grid */}
       <div style={{
         position: "absolute",
         inset: 0,
         opacity: 0.055,
-        backgroundImage: `radial-gradient(circle, ${T.inkSoft} 1px, transparent 1px)`,
+        backgroundImage: `radial-gradient(circle, ${T.amber} 1px, transparent 1px)`,
         backgroundSize: "clamp(20px, 4vw, 40px) clamp(20px, 4vw, 40px)"
       }} />
-      
-      {/* Circle outlines - responsive sizing and positioning */}
-      <motion.div 
-        initial={{scale:0.7, opacity:0}} 
-        animate={{scale:1, opacity:1}} 
-        transition={{duration:1.8, ease}}
-        style={{
-          position: "absolute",
-          top: "clamp(-25%, -15vw, -15%)",
-          right: "clamp(-20%, -15vw, -10%)",
-          width: "min(680px, 80vw)",
-          height: "min(680px, 80vw)",
-          borderRadius: "50%",
-          border: `1px solid ${T.sand}50`,
-          pointerEvents: "none"
-        }} 
-      />
-      <motion.div 
-        initial={{scale:0.7, opacity:0}} 
-        animate={{scale:1, opacity:1}} 
-        transition={{duration:1.8, delay:0.15, ease}}
-        style={{
-          position: "absolute",
-          top: "clamp(-15%, -10vw, -7%)",
-          right: "clamp(-10%, -8vw, -4%)",
-          width: "min(480px, 60vw)",
-          height: "min(480px, 60vw)",
-          borderRadius: "50%",
-          border: `1px solid ${T.sand}30`,
-          pointerEvents: "none"
-        }} 
-      />
-      
-      {/* Vertical accent line - responsive height and position */}
-      <motion.div 
-        initial={{scaleY:0}} 
-        animate={{scaleY:1}} 
-        transition={{duration:1.2, delay:0.4, ease}} 
-        style={{
-          transformOrigin: "top",
-          position: "absolute",
-          top: 0,
-          right: "clamp(5%, 10%, 13%)",
-          width: 1,
-          height: "clamp(20vh, 35vh, 44vh)",
-          background: `linear-gradient(to bottom, ${T.amber}90, transparent)`
-        }} 
-      />
-      
-      {/* Amber blob - responsive size and position */}
+
+      {/* Amber blob */}
       <div style={{
         position: "absolute",
         top: "clamp(10%, 15%, 18%)",
@@ -114,7 +121,7 @@ export function Hero() {
         padding: "clamp(60px, 12vh, 128px) clamp(16px, 5vw, 24px) 0",
         width: "100%"
       }}>
-        {/* Eyebrow - responsive gap */}
+        {/* Eyebrow */}
         <motion.div 
           initial={{opacity:0, x:-20}} 
           animate={{opacity:1, x:0}} 
@@ -140,11 +147,11 @@ export function Hero() {
             textTransform: "uppercase",
             whiteSpace: "nowrap"
           }}>
-            Premium Digital Agency · Est. 2022
+            Premium Digital Agency · Est. 2024
           </span>
         </motion.div>
 
-        {/* Heading - responsive text */}
+        {/* Heading - 2 lines */}
         <h1 style={{
           fontFamily: "Georgia,'Playfair Display',serif",
           fontSize: "clamp(2.5rem, 12vw, 8.5rem)",
@@ -155,33 +162,35 @@ export function Hero() {
           marginBottom: "clamp(16px, 3vh, 28px)",
           maxWidth: "min(900px, 100%)"
         }}>
-          {words.map((w,wi)=>(
-            <span key={wi} style={{display:"block"}}>
-              {w.text.split(" ").map((wd,i)=>(
-                <span key={i} style={{
-                  overflow:"hidden",
-                  display:"inline-block",
-                  marginRight:"0.22em"
-                }}>
-                  <motion.span 
-                    initial={{y:"115%", rotate:2}} 
-                    animate={{y:"0%", rotate:0}}
-                    transition={{duration:1, delay:0.3+wi*0.18+i*0.07, ease}}
-                    style={{
-                      display:"inline-block",
-                      fontStyle:w.italic?"italic":"normal",
-                      color:w.italic?T.amber:T.ink,
-                      fontSize: "inherit"
-                    }}>
-                    {wd}
-                  </motion.span>
-                </span>
+          {lines.map((line, li)=>(
+            <span key={li} style={{display:"block"}}>
+              {line.segments.map((w, wi)=>(
+                w.text.split(" ").map((wd, i)=>(
+                  <span key={`${wi}-${i}`} style={{
+                    overflow:"hidden",
+                    display:"inline-block",
+                    marginRight:"0.22em"
+                  }}>
+                    <motion.span 
+                      initial={{y:"115%", rotate:2}} 
+                      animate={{y:"0%", rotate:0}}
+                      transition={{duration:1, delay:0.3+li*0.18+wi*0.12+i*0.07, ease}}
+                      style={{
+                        display:"inline-block",
+                        fontStyle:w.italic?"italic":"normal",
+                        color:w.italic?T.amber:T.ink,
+                        fontSize: "inherit"
+                      }}>
+                      {wd}
+                    </motion.span>
+                  </span>
+                ))
               ))}
             </span>
           ))}
         </h1>
 
-        {/* Sub + CTA - responsive layout */}
+        {/* Sub + CTA */}
         <div style={{
           display: "flex",
           flexDirection: "row",
@@ -189,7 +198,8 @@ export function Hero() {
           alignItems: "flex-end",
           justifyContent: "space-between",
           gap: "clamp(16px, 4vw, 32px)",
-          marginTop: "clamp(16px, 3vh, 32px)"
+          marginTop: "clamp(16px, 3vh, 32px)",
+          marginBottom: "clamp(32px, 6vh, 56px)"
         }}>
           <motion.p 
             initial={{opacity:0, y:20}} 
@@ -203,7 +213,7 @@ export function Hero() {
               lineHeight: 1.7,
               flex: "1 1 300px"
             }}>
-           Web platforms, marketing systems, and content — meticulously crafted to help ambitious brands grow, compete, and lead.
+           Web platforms, marketing, and content built to scale ambitious brands.
           </motion.p>
           
           <motion.div 
@@ -218,12 +228,12 @@ export function Hero() {
               flex: "1 1 auto",
               justifyContent: "flex-start"
             }}>
-            <a href="/work" data-h
+            <a href="/contact" data-h
               style={{
                 display: "flex",
                 alignItems: "center",
                 gap: "clamp(8px, 2vw, 14px)",
-                background: T.ink,
+                background: T.sand,
                 color: T.cream,
                 fontFamily: "'Syne',sans-serif",
                 fontWeight: 700,
@@ -236,67 +246,52 @@ export function Hero() {
                 whiteSpace: "nowrap"
               }}
               onMouseEnter={e=>e.currentTarget.style.background=T.amber}
-              onMouseLeave={e=>e.currentTarget.style.background=T.ink}>
-              See Our Work <span style={{fontSize: "clamp(16px, 3vw, 18px)"}}>→</span>
-            </a>
-            
-            <a href="/contact" data-h
-              style={{
-                fontFamily: "'Syne',sans-serif",
-                fontSize: "clamp(11px, 2vw, 13px)",
-                fontWeight: 600,
-                color: `${T.ink}60`,
-                textDecoration: "none",
-                borderBottom: `1px solid transparent`,
-                transition: "all 0.3s",
-                whiteSpace: "nowrap"
-              }}
-              onMouseEnter={e=>{e.target.style.color=T.ink; e.target.style.borderBottomColor=`${T.ink}40`}}
-              onMouseLeave={e=>{e.target.style.color=`${T.ink}60`; e.target.style.borderBottomColor="transparent"}}>
-              Get in touch
+              onMouseLeave={e=>e.currentTarget.style.background=T.sand}>
+              Get in touch <span style={{fontSize: "clamp(16px, 3vw, 18px)"}}>→</span>
             </a>
           </motion.div>
         </div>
-
-        {/* Stats - responsive grid */}
-        <motion.div 
-          initial={{opacity:0, y:30}} 
-          animate={{opacity:1, y:0}} 
-          transition={{duration:0.9, delay:1.2}}
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))",
-            marginTop: "clamp(32px, 6vh, 72px)",
-            border: `1px solid ${T.sand}40`,
-            gap: 1,
-            background: `${T.sand}30`
-          }}>
-          {STATS.map(s=>(
-            <div key={s.label} style={{
-              background: T.cream,
-              padding: "clamp(16px, 3vh, 28px) clamp(12px, 2vw, 20px)",
-              textAlign: "center"
-            }}>
-              <div style={{
-                fontFamily: "Georgia,serif",
-                fontSize: "clamp(1.2rem, 5vw, 2.4rem)",
-                fontWeight: 900,
-                color: T.ink,
-                marginBottom: "clamp(2px, 1vh, 4px)"
-              }}>{s.v}</div>
-              <div style={{
-                fontFamily: "'JetBrains Mono',monospace",
-                fontSize: "clamp(8px, 2vw, 10px)",
-                color: `${T.ink}40`,
-                letterSpacing: "0.26em",
-                textTransform: "uppercase"
-              }}>{s.label}</div>
-            </div>
-          ))}
-        </motion.div>
       </motion.div>
 
-      {/* Scroll hint - responsive positioning */}
+      {/* VIDEO — clipRef holds radius (static), scaleRef holds scale (no radius) */}
+      <div
+        ref={clipRef}
+        style={{
+          position: "relative",
+          zIndex: 5,
+          width: "100vw",
+          marginLeft: "calc(-50vw + 50%)",
+          height: "clamp(320px, 55vh, 640px)",
+          overflow: "hidden"
+        }}
+      >
+        <div
+          ref={scaleRef}
+          style={{
+            width: "100%",
+            height: "100%",
+            transformOrigin: "center center"
+          }}
+        >
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            style={{
+              width: "100%",
+              height: "120%",
+              objectFit: "cover",
+              display: "block"
+            }}
+          >
+            <source src="/videos/Meta_Smart_Glasses.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+
+      {/* Scroll hint */}
       <motion.div 
         initial={{opacity:0}} 
         animate={{opacity:1}} 

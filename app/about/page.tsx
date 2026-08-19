@@ -23,66 +23,12 @@ function Hero(){
   const [r,v]=useRev();
   return(
     <section style={{
-      background: T.cream,
+      background: T.creamDark,
       padding: "clamp(100px, 15vh, 160px) clamp(16px, 5vw, 24px) clamp(60px, 8vh, 100px)",
       position: "relative",
       overflow: "hidden"
     }}>
-      {/* Background elements - responsive */}
-      <motion.div 
-        initial={{scale:0.7, opacity:0}} 
-        animate={{scale:1, opacity:1}} 
-        transition={{duration:1.8, ease}}
-        style={{
-          position: "absolute",
-          top: "clamp(-25%, -15vw, -15%)",
-          right: "clamp(-20%, -15vw, -10%)",
-          width: "min(680px, 80vw)",
-          height: "min(680px, 80vw)",
-          borderRadius: "50%",
-          border: `1px solid ${T.sand}50`,
-          pointerEvents: "none"
-        }} 
-      />
-      <motion.div 
-        initial={{scale:0.7, opacity:0}} 
-        animate={{scale:1, opacity:1}} 
-        transition={{duration:1.8, delay:0.15, ease}}
-        style={{
-          position: "absolute",
-          top: "clamp(-15%, -10vw, -7%)",
-          right: "clamp(-10%, -8vw, -4%)",
-          width: "min(480px, 60vw)",
-          height: "min(480px, 60vw)",
-          borderRadius: "50%",
-          border: `1px solid ${T.sand}30`,
-          pointerEvents: "none"
-        }} 
-      />
-      
-      {/* Vertical accent line - responsive height and position */}
-      <motion.div 
-        initial={{scaleY:0}} 
-        animate={{scaleY:1}} 
-        transition={{duration:1.2, delay:0.4, ease}} 
-        style={{
-          transformOrigin: "top",
-          position: "absolute",
-          top: 0,
-          right: "clamp(5%, 10%, 13%)",
-          width: 1,
-          height: "clamp(20vh, 35vh, 44vh)",
-          background: `linear-gradient(to bottom, ${T.amber}90, transparent)`
-        }} 
-      />
-      
-      <div style={{
-        maxWidth: 1200,
-        margin: "0 auto",
-        position: "relative",
-        zIndex: 1,
-        width: "100%"
-      }} ref={r}>
+      <div ref={r} style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 1 }}>
         
         <motion.div 
           initial={{opacity:0, x:-20}} 
@@ -230,7 +176,7 @@ function StatsBar(){
   );
 }
 
-/* ── VALUES ── */
+
 /* ── VALUES ── */
 function Values(){
   const [r,v]=useRev();
@@ -326,16 +272,7 @@ function Values(){
                   flexDirection: "column"
                 }}>
                 
-                <div style={{
-                  position: "absolute",
-                  top: "clamp(-60px, -8vw, -40px)",
-                  right: "clamp(-60px, -8vw, -40px)",
-                  width: "min(180px, 30vw)",
-                  height: "min(180px, 30vw)",
-                  borderRadius: "50%",
-                  border: `1px solid ${T.sand}25`,
-                  pointerEvents: "none"
-                }}/>
+             
                 
                 <span style={{
                   fontSize: "clamp(24px, 5vw, 32px)",
@@ -533,16 +470,7 @@ function Skills(){
             marginTop: "clamp(0px, 2vh, 20px)"
           }}>
           
-          <div style={{
-            position: "absolute",
-            top: "clamp(-20px, -3vw, -28px)",
-            right: "clamp(-20px, -3vw, -28px)",
-            width: "min(180px, 30vw)",
-            height: "min(180px, 30vw)",
-            borderRadius: "50%",
-            border: `1px solid ${T.sand}35`,
-            pointerEvents: "none"
-          }}/>
+         
           
           <div style={{
             background: T.cream,
@@ -624,7 +552,7 @@ function Skills(){
             
             <blockquote style={{
               paddingTop: "clamp(20px, 3vh, 28px)",
-              borderTop: `1px solid ${T.sand}35`
+             
             }}>
               <p style={{
                 fontFamily: "Georgia,serif",
@@ -813,9 +741,9 @@ function CTA(){
           </p>
           <div style={{display:"flex",justifyContent:"center",gap:20,flexWrap:"wrap"}}>
             <a href="/contact" data-h
-              style={{display:"inline-flex",alignItems:"center",gap:14,background:T.amber,color:T.ink,fontFamily:"'Syne',sans-serif",fontWeight:700,fontSize:12,letterSpacing:"0.22em",textTransform:"uppercase",padding:"20px 40px",textDecoration:"none",transition:"background 0.3s"}}
-              onMouseEnter={e=>e.currentTarget.style.background=T.cream}
-              onMouseLeave={e=>e.currentTarget.style.background=T.amber}>
+              style={{display:"inline-flex",alignItems:"center",gap:14,background:T.sand,color:T.cream,fontFamily:"'Syne',sans-serif",fontWeight:700,fontSize:12,letterSpacing:"0.22em",textTransform:"uppercase",padding:"20px 40px",textDecoration:"none",transition:"background 0.3s"}}
+              onMouseEnter={e=>{e.currentTarget.style.background=T.cream;e.currentTarget.style.color=T.ink}}
+              onMouseLeave={e=>{e.currentTarget.style.background=T.sand;e.currentTarget.style.color=T.cream}}>
               Start a Conversation →
             </a>
             <a href="/work" data-h

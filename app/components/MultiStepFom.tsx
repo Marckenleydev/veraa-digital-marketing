@@ -636,8 +636,8 @@ export function MultiStepForm(){
                   whiteSpace: "nowrap",
                   opacity: submitting?0.6:1
                 }}
-                onMouseEnter={e=>{if(canNext()&&!submitting)e.currentTarget.style.background=T.cream;}}
-                onMouseLeave={e=>{if(canNext()&&!submitting)e.currentTarget.style.background=T.amber;}}>
+                onMouseEnter={e=>{if(canNext()&&!submitting){e.currentTarget.style.background=T.cream; e.currentTarget.style.color=T.ink;}}}
+                onMouseLeave={e=>{if(canNext()&&!submitting){e.currentTarget.style.background=T.sand; e.currentTarget.style.color=T.cream;}}}>
                 {submitting?"Sending...":step===4?"Send Brief ":"Continue "}<span style={{fontSize:"clamp(14px, 3vw, 16px)"}}>{!submitting&&"→"}</span>
               </button>
             </div>

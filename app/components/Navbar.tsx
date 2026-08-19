@@ -9,6 +9,8 @@ export const NAV = [
   {label:"Work",href:"/work"},
   {label:"About",href:"/about"},
   {label:"Contact",href:"/contact"},
+  // {label:"Privacy",href:"/privacy"},
+  {label:"Terms",href:"/terms"},
 ];
 
 export function Navbar() {
@@ -31,20 +33,26 @@ export function Navbar() {
     <motion.header initial={{y:-90}} animate={{y:0}} transition={{duration:1,ease:[0.22, 1, 0.36, 1]}}
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
       style={{
-        backgroundColor: scrolled ? "rgba(245,240,232,0.95)" : "transparent",
-        backdropFilter: scrolled ? "blur(16px)" : "none",
-        borderBottom: scrolled ? `1px solid rgba(184,170,146,0.25)` : "none",
-        paddingTop: scrolled ? "14px" : "24px",
-        paddingBottom: scrolled ? "14px" : "24px",
-      }}>
+  backgroundColor: scrolled ? "#F7F9FC" : "transparent",
+
+  backdropFilter: scrolled ? "" : "none",
+
+  borderBottom: scrolled
+    ? ``
+    : "none",
+
+  paddingTop: scrolled ? "14px" : "24px",
+
+  paddingBottom: scrolled ? "14px" : "24px",
+}}>
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <a href="/" data-h className="flex items-center gap-3 group">
           <div className="w-8 h-8 flex items-center justify-center transition-colors duration-300"
-            style={{backgroundColor:T.ink}}>
-            <span style={{color:T.cream,fontFamily:"Georgia,serif",fontWeight:900,fontSize:13}}>V</span>
+            style={{backgroundColor:T.sand}}>
+            <span style={{color:T.cream,fontFamily:"Georgia,serif",fontWeight:900,fontSize:13}}>A</span>
           </div>
           <span style={{fontFamily:"'Syne',system-ui,sans-serif",fontWeight:800,fontSize:13,letterSpacing:"0.22em",color:T.ink,textTransform:"uppercase"}}>
-            VERAA<span style={{color:T.amber}}>.</span>DIGITAL
+            AXONY<span style={{color:T.amber}}>.</span>DIGITAL
           </span>
         </a>
         

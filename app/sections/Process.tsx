@@ -124,7 +124,7 @@ function StepCard({s,i}) {
       onMouseEnter={() => setHov(true)} 
       onMouseLeave={() => setHov(false)}
       style={{
-        background: hov ? "#1E1C12" : T.inkSoft,
+        background: hov ? T.sand : T.inkSoft,
         padding: "clamp(24px, 4vh, 36px)",
         transition: "background 0.3s",
         cursor: "none",
@@ -149,7 +149,7 @@ function StepCard({s,i}) {
           fontFamily: "'JetBrains Mono',monospace",
           fontSize: "clamp(32px, 8vw, 52px)",
           fontWeight: 700,
-          color: hov ? `${T.amber}25` : `${T.cream}07`,
+          color: hov ? `${T.amber}85` : `${T.cream}07`,
           lineHeight: 1,
           transition: "color 0.4s"
         }}>
@@ -159,8 +159,8 @@ function StepCard({s,i}) {
         <span style={{
           fontFamily: "'JetBrains Mono',monospace",
           fontSize: "clamp(9px, 2vw, 10px)",
-          color: `${T.amber}70`,
-          background: `${T.amber}15`,
+          color: `${T.amberLight}100`,
+          background: `${T.amber}70`,
           padding: "clamp(4px, 1vh, 6px) clamp(8px, 1.5vw, 12px)",
           letterSpacing: "0.14em",
           whiteSpace: "nowrap"
@@ -183,7 +183,7 @@ function StepCard({s,i}) {
       <p style={{
         fontFamily: "'Syne',sans-serif",
         fontSize: "clamp(12px, 2.2vw, 13px)",
-        color: `${T.cream}40`,
+        color: `${T.cream}50`,
         lineHeight: 1.7,
         wordBreak: "break-word"
       }}>

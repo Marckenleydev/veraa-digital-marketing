@@ -1,38 +1,23 @@
 
+// export const T = {
+//   cream: "#F5F0E8", creamDark: "#EDE7D9",
+//   ink: "#111008",   inkSoft: "#2A2618",
+//   amber: "#C8872A", amberLight: "#E8A23C",
+//   sand: "#B8AA92",  sandLight: "#D4CAB8",
+// };
+
 export const T = {
-  cream: "#F5F0E8", creamDark: "#EDE7D9",
-  ink: "#111008",   inkSoft: "#2A2618",
-  amber: "#C8872A", amberLight: "#E8A23C",
-  sand: "#B8AA92",  sandLight: "#D4CAB8",
+  cream: "#F7F9FC", creamDark: "#E7EDF7",
+  ink: "#0F1A4D",   inkSoft: "#1E2C6E",
+  amber: "#4FA8F0", amberLight: "#82C6FF",
+  sand: "#E5433F",  sandLight: "#F1897F",
 };
 
 export const SERVICES = [
-  {
-    n:"01", icon:"⬡", title:"Web Development", tagline:"High-performance applications built for scale.",
-    desc:"We architect and build web products that are fast by default, maintainable by design, and engineered to grow with your business. From marketing sites to complex SaaS platforms, we've shipped it all.",
-    features:["Next.js / React / Node.js","REST & GraphQL APIs","Database design & optimisation","Authentication & authorisation","CI/CD pipeline setup","Core Web Vitals & Lighthouse 100"],
-    tech:["Next.js","TypeScript","Node.js","PostgreSQL","Redis","Vercel / AWS"],
-tiers: [
-  { 
-    n: "Starter", 
-    p: "AED 12,000", 
-    d: "High-converting marketing website (up to 5 pages)" 
-  },
-  { 
-    n: "Growth", 
-    p: "AED 18,000", 
-    d: "Custom website with CMS and scalable backend integration" 
-  },
-  { 
-    n: "Enterprise", 
-    p: "Custom", 
-    d: "Advanced platforms, web applications, or system migrations" 
-  }
-]
-  },
+  
   
   {
-  n:"02",
+  n:"01",
   icon:"◎",
   title:"Meta Ads",
   tagline:"High-converting campaigns that turn attention into customers.",
@@ -72,7 +57,7 @@ tiers: [
 ]
 },
   {
-  n:"03",
+  n:"02",
   icon:"⬢",
   title:"Content Production",
   tagline:"High-impact visuals that build brands and drive attention.",
@@ -110,7 +95,30 @@ tiers: [
     d: "Ongoing monthly content production, creative direction, and asset delivery" 
   }
 ]
-}
+},
+{
+    n:"03", icon:"⬡", title:"Web Development", tagline:"High-performance applications built for scale.",
+    desc:"We architect and build web products that are fast by default, maintainable by design, and engineered to grow with your business. From marketing sites to complex SaaS platforms, we've shipped it all.",
+    features:["Next.js / React / Node.js","REST & GraphQL APIs","Database design & optimisation","Authentication & authorisation","CI/CD pipeline setup","Core Web Vitals & Lighthouse 100"],
+    tech:["Next.js","TypeScript","Node.js","PostgreSQL","Redis","Vercel / AWS"],
+tiers: [
+  { 
+    n: "Starter", 
+    p: "AED 12,000", 
+    d: "High-converting marketing website (up to 5 pages)" 
+  },
+  { 
+    n: "Growth", 
+    p: "AED 18,000", 
+    d: "Custom website with CMS and scalable backend integration" 
+  },
+  { 
+    n: "Enterprise", 
+    p: "Custom", 
+    d: "Advanced platforms, web applications, or system migrations" 
+  }
+]
+  }
 ];
 
 export const FAQS = [
@@ -220,10 +228,11 @@ export const MILESTONES = [
 ];
 
 export const SKILLS = [
-  {n:"Web Development",p:98},
+  
   {n:"Paid Advertising (Meta Ads)",p:92},
   {n:"SEO & Performance Marketing",p:90},
   {n:"Content & Media Production",p:85},
+  {n:"Web Development",p:98},
 ];
 
 
@@ -233,15 +242,16 @@ export const SKILLS = [
 
 
 export const SERVICESHome = [
-  { n:"01", title:"Web Development & Design",   desc:"High-performance apps built with Next.js, React, and TypeScript. Scalable, accessible, and blazing fast.", tags:["Next.js","React","Node.js","TypeScript"] },
+  
 
-  { n:"02", title:"Meta Ads",      desc:"Data-driven Meta Ads campaigns that combine high-converting creatives with precise audience targeting to generate consistent leads and measurable ROI.", tags:["Meta Ads","Google Ads","Content Production","SEO Strategy"] },
+  { n:"01", title:"Meta Ads",      desc:"Data-driven Meta Ads campaigns that combine high-converting creatives with precise audience targeting to generate consistent leads and measurable ROI.", tags:["Meta Ads","Google Ads","Content Production","SEO Strategy"] },
    { 
-    n:"03",
+    n:"02",
     title:"Content Production",
     desc:"High-impact visual content for social media and brands. From photoshoots to cinematic video, crafted to engage, convert, and elevate your digital presence.",
     tags:["Photography","Videography","Reels","Brand Content","Social Media"]
   },
+  { n:"03", title:"Web Development & Design",   desc:"High-performance apps built with Next.js, React, and TypeScript. Scalable, accessible, and blazing fast.", tags:["Next.js","React","Node.js","TypeScript"] },
 ];
 
 export const WORKS = [

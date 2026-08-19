@@ -2,16 +2,12 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { T } from "../data";
 
 export const dynamic = 'force-dynamic';
 
 /* ── DESIGN TOKENS (matches site + dashboard + login exactly) ── */
-const T = {
-  cream: "#F5F0E8", creamDark: "#EDE7D9",
-  ink: "#111008",   inkSoft: "#2A2618",
-  amber: "#C8872A", amberLight: "#E8A23C",
-  sand: "#B8AA92",  sandLight: "#D4CAB8",
-};
+
 const ease = [0.22, 1, 0.36, 1];
 
 const inputStyle: React.CSSProperties = {
@@ -274,9 +270,9 @@ export default function RegisterPage() {
                 </AnimatePresence>
 
                 <button type="submit" disabled={loading}
-                  style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "center", gap: 12, background: loading ? T.inkSoft : T.ink, color: T.cream, fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: 12, letterSpacing: "0.22em", textTransform: "uppercase", padding: "18px", border: "none", cursor: loading ? "not-allowed" : "pointer", transition: "background 0.3s", opacity: loading ? 0.7 : 1 }}
+                  style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "center", gap: 12, background: loading ? T.sand : T.sand, color: T.cream, fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: 12, letterSpacing: "0.22em", textTransform: "uppercase", padding: "18px", border: "none", cursor: loading ? "not-allowed" : "pointer", transition: "background 0.3s", opacity: loading ? 0.7 : 1 }}
                   onMouseEnter={e => { if (!loading) (e.currentTarget as HTMLButtonElement).style.background = T.amber; }}
-                  onMouseLeave={e => { if (!loading) (e.currentTarget as HTMLButtonElement).style.background = T.ink; }}>
+                  onMouseLeave={e => { if (!loading) (e.currentTarget as HTMLButtonElement).style.background = T.sand; }}>
                   {loading ? "Creating Account…" : "Create Account"} {!loading && <span style={{ fontSize: 16 }}>→</span>}
                 </button>
               </form>

@@ -180,7 +180,7 @@ export function About() {
               display: "inline-flex",
               alignItems: "center",
               gap: "clamp(12px, 2vw, 16px)",
-              background: T.ink,
+              background: T.sand,
               color: T.cream,
               fontFamily: "'Syne',sans-serif",
               fontWeight: 700,
@@ -194,7 +194,7 @@ export function About() {
               whiteSpace: "nowrap"
             }}
             onMouseEnter={e => e.currentTarget.style.background = T.amber}
-            onMouseLeave={e => e.currentTarget.style.background = T.ink}>
+            onMouseLeave={e => e.currentTarget.style.background = T.sand}>
             Work With Us →
           </motion.a>
         </motion.div>
@@ -211,17 +211,7 @@ export function About() {
             marginTop: "clamp(0px, 2vh, 20px)"
           }}>
           
-          {/* Decorative circle - responsive sizing */}
-          <div style={{
-            position: "absolute",
-            top: "clamp(-20px, -3vw, -28px)",
-            right: "clamp(-20px, -3vw, -28px)",
-            width: "clamp(120px, 20vw, 180px)",
-            height: "clamp(120px, 20vw, 180px)",
-            borderRadius: "50%",
-            border: `1px solid ${T.sand}35`,
-            pointerEvents: "none"
-          }} />
+        
           
           {/* Main content box */}
           <div style={{
@@ -303,7 +293,7 @@ export function About() {
             <blockquote style={{
               marginTop: "clamp(28px, 5vh, 40px)",
               paddingTop: "clamp(20px, 3vh, 28px)",
-              borderTop: `1px solid ${T.sand}35`
+             
             }}>
               <p style={{
                 fontFamily: "Georgia,serif",

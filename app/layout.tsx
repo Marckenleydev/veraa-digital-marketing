@@ -14,15 +14,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://veraadigital.com"),
+  metadataBase: new URL("https://axonydigital.com"),
 
   title: {
-    default: "veraa digital  | Marketing Digital Agency",
-    template: "%s | veraadigital ",
+    default: "axony digital  | Marketing Digital Agency",
+    template: "%s | axony digital ",
   },
 
   description:
-    "veraadigital  is a premium software and digital solutions agency founded by Marckenley Dorsainvil, specializing in modern websites, AI integrations, scalable platforms, and digital experiences for businesses worldwide.",
+    "axony digital  is a premium software and digital solutions agency founded by Marckenley Dorsainvil, specializing in modern websites, AI integrations, scalable platforms, and digital experiences for businesses worldwide.",
 
   keywords: [
     "Marckenley Dorsainvil",
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
     "modern web applications",
   ],
 
-  authors: [{ name: "veraadigital " }],
-  creator: "veraadigital ",
-  publisher: "veraadigital ",
+  authors: [{ name: "axonydigital " }],
+  creator: "axonydigital ",
+  publisher: "axonydigital ",
 
   robots: {
     index: true,
@@ -49,18 +49,18 @@ export const metadata: Metadata = {
   
 
   openGraph: {
-    title: "veraa digital | Marketing Digital & AI Solutions",
+    title: "axony digital | Marketing Digital & AI Solutions",
     description:
       "We design and build high-performance websites, AI-powered systems, and scalable digital products for startups and enterprises.",
       
-    url: "https://veraadigital.com",
-    siteName: "veraadigital ",
+    url: "https://axonydigital.com",
+    siteName: "axonydigital ",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "veraadigital  Marketing Digital Agency",
+        alt: "axonydigital  Marketing Digital Agency",
       },
     ],
     locale: "en_US",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "veraadigital | Web & AI Development",
+    title: "axonydigital | Web & AI Development",
     description:
       "Premium Marketing Digital, AI solutions, and scalable software built for modern businesses.",
     images: ["/og-image.jpg"],
@@ -103,19 +103,19 @@ export default function RootLayout({
     "@type": "Person",
     "name": "Marckenley Dorsainvil",
     "jobTitle": "Founder, Engineer & Digital Marketing Strategist",
-    "url": "https://veraadigital.com",
+    "url": "https://axonydigital.com",
     "worksFor": {
       "@type": "Organization",
-      "name": "Veraa digital ",
-      "url": "https://veraadigital.com"
+      "name": "axony digital ",
+      "url": "https://axonydigital.com"
     }
   };
 
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Veraa digital ",
-    "url": "https://veraadigital.com",
+    "name": "axony digital ",
+    "url": "https://axonydigital.com",
     "founder": {
       "@type": "Person",
       "name": "Marckenley Dorsainvil"
@@ -161,10 +161,10 @@ export default function RootLayout({
         <div className="fixed bottom-26 right-6 z-[9999] md:bottom-30">
           <a
             href="tel:+971552635229"
-            className="relative call-ring w-16 h-16 rounded-full bg-white border border-[#C9A84C] flex items-center justify-center shadow-2xl"
+            className="relative call-ring w-16 h-16 rounded-full bg-white border border-[#E5433F] flex items-center justify-center shadow-2xl"
           >
             <svg
-              className="w-7 h-7 text-[#2A0404]"
+              className="w-7 h-7 text-[#E5433F]"
               fill="currentColor"
               viewBox="0 0 24 24"
             >

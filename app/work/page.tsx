@@ -23,23 +23,21 @@ function ProjectCard({w,i,onClick}){
     <motion.div ref={r} layout initial={{opacity:0,y:40}} animate={v?{opacity:1,y:0}:{opacity:0}} transition={{duration:0.75,delay:(i%3)*0.1,ease}}
       onMouseEnter={()=>setHov(true)} onMouseLeave={()=>setHov(false)}
       onClick={onClick} data-h
-      style={{background:w.bg,minHeight:360,padding:36,display:"flex",flexDirection:"column",justifyContent:"space-between",cursor:"none",position:"relative",overflow:"hidden"}}>
+      style={{background:T.inkSoft,minHeight:360,padding:36,display:"flex",flexDirection:"column",justifyContent:"space-between",cursor:"none",position:"relative",overflow:"hidden"}}>
       <motion.div animate={{opacity:hov?0.14:0.05}} style={{position:"absolute",inset:0,background:`radial-gradient(circle at 30% 50%,${w.acc},transparent 70%)`,filter:"blur(50px)"}}/>
       <div style={{position:"relative",zIndex:1}}>
         <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:32}}>
-          <span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:11,color:`${w.acc}70`,letterSpacing:"0.18em"}}>{w.id}</span>
-          <div style={{display:"flex",gap:6,flexWrap:"wrap",justifyContent:"flex-end"}}>
-            {w.tags.map(t=>(<span key={t} style={{fontFamily:"'JetBrains Mono',monospace",fontSize:9,padding:"4px 10px",border:`1px solid ${w.acc}30`,color:`${w.acc}80`,letterSpacing:"0.12em",textTransform:"uppercase"}}>{t}</span>))}
-          </div>
+          <span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:13,color:`${T.cream}70`,letterSpacing:"0.18em"}}>{w.id}</span>
+          
         </div>
         <h3 style={{fontFamily:"Georgia,serif",fontSize:"clamp(2rem,4vw,3rem)",fontWeight:900,color:T.cream,lineHeight:1.05,letterSpacing:"-0.02em",marginBottom:4}}>{w.title}</h3>
-        <p style={{fontFamily:"'Syne',sans-serif",fontSize:12,color:`${w.acc}B0`,marginBottom:12,letterSpacing:"0.08em"}}>{w.sub}</p>
+        <p style={{fontFamily:"'Syne',sans-serif",fontSize:12,color:`${T.cream}B0`,marginBottom:12,letterSpacing:"0.08em"}}>{w.sub}</p>
         <motion.p animate={{opacity:hov?1:0,y:hov?0:8}} transition={{duration:0.3}}
           style={{fontFamily:"'Syne',sans-serif",fontSize:13,color:`${T.cream}55`,lineHeight:1.65,maxWidth:280}}>{w.desc}</motion.p>
       </div>
       <div style={{position:"relative",zIndex:1,display:"flex",alignItems:"center",justifyContent:"space-between",paddingTop:20,marginTop:16,borderTop:`1px solid ${w.acc}20`}}>
-        <span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:11,color:`${w.acc}60`}}>{w.year}</span>
-        <motion.span animate={{x:hov?0:-8,opacity:hov?1:0}} style={{fontFamily:"'Syne',sans-serif",fontWeight:700,fontSize:12,color:w.acc}}>
+        {/* <span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:11,color:`${w.acc}60`}}>{w.year}</span> */}
+        <motion.span animate={{x:hov?0:-8,opacity:hov?1:0}} style={{fontFamily:"'Syne',sans-serif",fontWeight:700,fontSize:12,color:T.cream}}>
           Case Study →
         </motion.span>
       </div>
@@ -56,58 +54,12 @@ export default function WorkPage(){
   const filtered=filter==="All"?PROJECTS:PROJECTS.filter(p=>p.cat===filter);
 
   return(
-    <div style={{fontFamily:"'Syne','DM Sans',system-ui,sans-serif",background:T.cream,minHeight:"100vh",cursor:"none"}}>
+    <div style={{fontFamily:"'Syne','DM Sans',system-ui,sans-serif",background:T.creamDark,minHeight:"100vh",cursor:"none"}}>
       <Cursor/>
       <Navbar />
 
       {/* Hero */}
-      <section style={{background:T.cream,padding:"160px 24px 80px",position:"relative",overflow:"hidden"}}>
-<motion.div 
-        initial={{scale:0.7, opacity:0}} 
-        animate={{scale:1, opacity:1}} 
-        transition={{duration:1.8, ease}}
-        style={{
-          position: "absolute",
-          top: "clamp(-25%, -15vw, -15%)",
-          right: "clamp(-20%, -15vw, -10%)",
-          width: "min(680px, 80vw)",
-          height: "min(680px, 80vw)",
-          borderRadius: "50%",
-          border: `1px solid ${T.sand}50`,
-          pointerEvents: "none"
-        }} 
-      />
-      <motion.div 
-        initial={{scale:0.7, opacity:0}} 
-        animate={{scale:1, opacity:1}} 
-        transition={{duration:1.8, delay:0.15, ease}}
-        style={{
-          position: "absolute",
-          top: "clamp(-15%, -10vw, -7%)",
-          right: "clamp(-10%, -8vw, -4%)",
-          width: "min(480px, 60vw)",
-          height: "min(480px, 60vw)",
-          borderRadius: "50%",
-          border: `1px solid ${T.sand}30`,
-          pointerEvents: "none"
-        }} 
-      />
-      
-      {/* Vertical accent line - responsive height and position */}
-      <motion.div 
-        initial={{scaleY:0}} 
-        animate={{scaleY:1}} 
-        transition={{duration:1.2, delay:0.4, ease}} 
-        style={{
-          transformOrigin: "top",
-          position: "absolute",
-          top: 0,
-          right: "clamp(5%, 10%, 13%)",
-          width: 1,
-          height: "clamp(20vh, 35vh, 44vh)",
-          background: `linear-gradient(to bottom, ${T.amber}90, transparent)`
-        }} 
-      />
+      <section style={{background:T.creamDark,padding:"160px 24px 80px",position:"relative",overflow:"hidden"}}>
         <div ref={r} style={{maxWidth:1200,margin:"0 auto",position:"relative",zIndex:1}}>
           <motion.div initial={{opacity:0,x:-20}} animate={v?{opacity:1,x:0}:{}} transition={{duration:0.8,delay:0.1}} style={{display:"flex",alignItems:"center",gap:16,marginBottom:28}}>
             <span style={{width:48,height:1,background:T.amber,display:"block"}}/>
@@ -127,7 +79,7 @@ export default function WorkPage(){
       </section>
 
       {/* Filter bar */}
-      <div style={{background:T.creamDark,borderTop:`1px solid ${T.sand}30`,borderBottom:`1px solid ${T.sand}30`,padding:"16px 24px",position:"sticky",top:0,zIndex:10,backdropFilter:"blur(16px)"}}>
+      <div style={{background:T.creamDark,padding:"16px 24px",position:"sticky",top:0,zIndex:10,backdropFilter:"blur(16px)"}}>
         <div style={{maxWidth:1200,margin:"0 auto",display:"flex",gap:8,flexWrap:"wrap"}}>
           {CATEGORIES.map(cat=>(
             <button key={cat} onClick={()=>setFilter(cat)} data-h
@@ -154,7 +106,7 @@ export default function WorkPage(){
       </section>
 
       {/* CTA */}
-      <section style={{background:T.cream,borderTop:`1px solid ${T.sand}30`,padding:"120px 24px"}}>
+      <section style={{background:T.cream,padding:"120px 24px"}}>
         <div style={{maxWidth:700,margin:"0 auto",textAlign:"center"}}>
           <motion.div initial={{opacity:0,y:30}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:0.9,ease}}>
             <div style={{display:"inline-flex",alignItems:"center",gap:12,marginBottom:24}}>
@@ -169,9 +121,9 @@ export default function WorkPage(){
               Free discovery call to kick things off. No commitment — just a conversation.
             </p>
             <a href="/contact" data-h
-              style={{display:"inline-flex",alignItems:"center",gap:14,background:T.ink,color:T.cream,fontFamily:"'Syne',sans-serif",fontWeight:700,fontSize:12,letterSpacing:"0.22em",textTransform:"uppercase",padding:"20px 40px",textDecoration:"none",transition:"background 0.3s"}}
+              style={{display:"inline-flex",alignItems:"center",gap:14,background:T.sand,color:T.cream,fontFamily:"'Syne',sans-serif",fontWeight:700,fontSize:12,letterSpacing:"0.22em",textTransform:"uppercase",padding:"20px 40px",textDecoration:"none",transition:"background 0.3s"}}
               onMouseEnter={e=>e.currentTarget.style.background=T.amber}
-              onMouseLeave={e=>e.currentTarget.style.background=T.ink}>
+              onMouseLeave={e=>e.currentTarget.style.background=T.sand}>
               Start a Project →
             </a>
           </motion.div>

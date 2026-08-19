@@ -88,26 +88,24 @@ function WorkCard({w,i}) {
     <motion.div ref={r} initial={{opacity:0,y:40}} animate={v?{opacity:1,y:0}:{}}
       transition={{duration:0.75,delay:(i%2)*0.12,ease}}
       onMouseEnter={()=>setHov(true)} onMouseLeave={()=>setHov(false)}
-      data-h style={{background:w.bg,minHeight:340,padding:36,display:"flex",flexDirection:"column",justifyContent:"space-between",cursor:"none",position:"relative",overflow:"hidden"}}>
+      data-h style={{background:T.inkSoft,minHeight:340,padding:36,display:"flex",flexDirection:"column",justifyContent:"space-between",cursor:"none",position:"relative",overflow:"hidden"}}>
       {/* Glow */}
       <motion.div animate={{opacity:hov?0.14:0.05}} style={{position:"absolute",inset:0,background:`radial-gradient(circle at 30% 50%, ${w.acc}, transparent 70%)`,filter:"blur(50px)",transition:"opacity 0.4s"}} />
       <div style={{position:"relative",zIndex:1}}>
         <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:32}}>
-          <span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:11,color:`${w.acc}70`,letterSpacing:"0.18em"}}>{w.id}</span>
+          <span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:13,color:`${T.cream}70`,letterSpacing:"0.18em"}}>{w.id}</span>
           <div style={{display:"flex",gap:6,flexWrap:"wrap",justifyContent:"flex-end"}}>
-            {w.tags.map(t=>(
-              <span key={t} style={{fontFamily:"'JetBrains Mono',monospace",fontSize:9,padding:"4px 10px",border:`1px solid ${w.acc}30`,color:`${w.acc}80`,letterSpacing:"0.12em",textTransform:"uppercase"}}>{t}</span>
-            ))}
+           
           </div>
         </div>
         <h3 style={{fontFamily:"Georgia,serif",fontSize:"clamp(2rem,4vw,3rem)",fontWeight:900,color:T.cream,lineHeight:1.05,letterSpacing:"-0.02em",marginBottom:4}}>{w.title}</h3>
-        <p style={{fontFamily:"'Syne',sans-serif",fontSize:12,color:`${w.acc}B0`,marginBottom:12,letterSpacing:"0.08em"}}>{w.sub}</p>
+        <p style={{fontFamily:"'Syne',sans-serif",fontSize:12,color:`${T.cream}B0`,marginBottom:12,letterSpacing:"0.08em"}}>{w.sub}</p>
         <motion.p animate={{opacity:hov?1:0,y:hov?0:8}} transition={{duration:0.3}}
           style={{fontFamily:"'Syne',sans-serif",fontSize:13,color:`${T.cream}55`,lineHeight:1.65,maxWidth:280}}>{w.desc}</motion.p>
       </div>
       <div style={{position:"relative",zIndex:1,display:"flex",alignItems:"center",justifyContent:"space-between",paddingTop:20,marginTop:16,borderTop:`1px solid ${w.acc}20`}}>
-        <span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:11,color:`${w.acc}60`}}>{w.year}</span>
-        <motion.span animate={{x:hov?0:-8,opacity:hov?1:0}} style={{fontFamily:"'Syne',sans-serif",fontWeight:700,fontSize:12,color:w.acc}}>
+        {/* <span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:11,color:`${w.acc}60`}}>{w.year}</span> */}
+        <motion.span animate={{x:hov?0:-8,opacity:hov?1:0}} style={{fontFamily:"'Syne',sans-serif",fontWeight:700,fontSize:12,color:T.cream}}>
        <a href={w.link} style={{textDecoration:"none"}}>   Case Study → </a> 
         </motion.span>
       </div>

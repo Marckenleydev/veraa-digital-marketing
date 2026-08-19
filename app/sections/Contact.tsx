@@ -419,8 +419,8 @@ export function Contact() {
                     data-h
                     style={{
                       width: "100%",
-                      background: T.amber,
-                      color: T.ink,
+                      background: T.sand,
+                      color: T.cream,
                       fontFamily: "'Syne',sans-serif",
                       fontWeight: 800,
                       fontSize: "clamp(11px, 2.2vw, 12px)",
@@ -436,8 +436,14 @@ export function Contact() {
                       transition: "background 0.3s",
                       whiteSpace: "nowrap"
                     }}
-                    onMouseEnter={e => e.currentTarget.style.background = T.cream}
-                    onMouseLeave={e => e.currentTarget.style.background = T.amber}>
+                    onMouseEnter={e => {
+                      e.currentTarget.style.background = T.cream;
+                      e.currentTarget.style.color = T.ink;
+                    }}
+                    onMouseLeave={e => {
+                      e.currentTarget.style.background = T.sand;
+                      e.currentTarget.style.color = T.cream;
+                    }}>
                     Send Message <span style={{fontSize: "clamp(16px, 3vw, 18px)"}}>→</span>
                   </button>
                 </motion.div>

@@ -23,55 +23,8 @@ export default function ContactPage(){
       <Navbar />
 
       {/* Hero */}
-      <section style={{background:T.cream,padding:"160px 24px 80px",position:"relative",overflow:"hidden"}}>
-<motion.div 
-        initial={{scale:0.7, opacity:0}} 
-        animate={{scale:1, opacity:1}} 
-        transition={{duration:1.8, ease}}
-        style={{
-          position: "absolute",
-          top: "clamp(-25%, -15vw, -15%)",
-          right: "clamp(-20%, -15vw, -10%)",
-          width: "min(680px, 80vw)",
-          height: "min(680px, 80vw)",
-          borderRadius: "50%",
-          border: `1px solid ${T.sand}50`,
-          pointerEvents: "none"
-        }} 
-      />
-      <motion.div 
-        initial={{scale:0.7, opacity:0}} 
-        animate={{scale:1, opacity:1}} 
-        transition={{duration:1.8, delay:0.15, ease}}
-        style={{
-          position: "absolute",
-          top: "clamp(-15%, -10vw, -7%)",
-          right: "clamp(-10%, -8vw, -4%)",
-          width: "min(480px, 60vw)",
-          height: "min(480px, 60vw)",
-          borderRadius: "50%",
-          border: `1px solid ${T.sand}30`,
-          pointerEvents: "none"
-        }} 
-      />
-      
-      {/* Vertical accent line - responsive height and position */}
-      <motion.div 
-        initial={{scaleY:0}} 
-        animate={{scaleY:1}} 
-        transition={{duration:1.2, delay:0.4, ease}} 
-        style={{
-          transformOrigin: "top",
-          position: "absolute",
-          top: 0,
-          right: "clamp(5%, 10%, 13%)",
-          width: 1,
-          height: "clamp(20vh, 35vh, 44vh)",
-          background: `linear-gradient(to bottom, ${T.amber}90, transparent)`
-        }} 
-      />
-
-        {/* <motion.div initial={{scaleY:0}} animate={{scaleY:1}} transition={{duration:1.2,delay:0.4,ease:"easeOut"}} style={{transformOrigin:"top",position:"absolute",top:0,right:"13%",width:1,height:"44vh",background:`linear-gradient(to bottom,${T.amber}80,transparent)`}}/> */}
+      <section style={{background:T.creamDark,padding:"160px 24px 80px",position:"relative",overflow:"hidden"}}>
+        <motion.div initial={{scaleY:0}} animate={{scaleY:1}} transition={{duration:1.2,delay:0.4,ease:"easeOut"}} style={{transformOrigin:"top",position:"absolute",top:0,right:"13%",width:1,height:"44vh",background:`linear-gradient(to bottom,${T.amber}80,transparent)`}}/>
         <div ref={r} style={{maxWidth:1200,margin:"0 auto",position:"relative",zIndex:1}}>
           <motion.div initial={{opacity:0,x:-20}} animate={v?{opacity:1,x:0}:{}} transition={{duration:0.8,delay:0.1}} style={{display:"flex",alignItems:"center",gap:16,marginBottom:28}}>
             <span style={{width:48,height:1,background:T.amber,display:"block"}}/>

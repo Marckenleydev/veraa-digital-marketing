@@ -45,7 +45,7 @@ export function Navbar() {
 
   paddingBottom: scrolled ? "14px" : "24px",
 }}>
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between mobile-header-container" >
         <a href="/" data-h className="flex items-center gap-3 group">
           <div className="w-8 h-8 flex items-center justify-center transition-colors duration-300"
             style={{backgroundColor:T.sand}}>
@@ -154,7 +154,7 @@ export function Navbar() {
         </a>
         
         {/* Mobile menu button */}
-        <button className="md:hidden flex flex-col gap-1.5 p-2" onClick={() => setOpen(!open)} data-h>
+        <button className="md:hidden flex flex-col gap-1.5 p-2 "  onClick={() => setOpen(!open)} data-h>
           <motion.span animate={{rotate:open?45:0, y:open?7:0}} style={{display:"block", width:22, height:2, backgroundColor:T.ink}} />
           <motion.span animate={{opacity:open?0:1}} style={{display:"block", width:22, height:2, backgroundColor:T.ink}} />
           <motion.span animate={{rotate:open?-45:0, y:open?-9:0}} style={{display:"block", width:22, height:2, backgroundColor:T.ink}} />

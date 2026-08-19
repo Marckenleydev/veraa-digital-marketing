@@ -112,3 +112,8 @@ body {
   * { cursor: auto !important; }
 }
 
+@media (max-width: 767px) {
+  .mobile-header-container {
+    padding-right: 10px !important;
+  }
+}

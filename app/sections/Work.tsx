@@ -541,7 +541,7 @@ function WorkCard({ w, i }) {
           height: 2,
           background: w.acc,
           transformOrigin: "left",
-        }}
+        }
         transition={{
           duration: 0.4,
         }}
